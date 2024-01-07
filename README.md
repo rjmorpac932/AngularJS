@@ -1,27 +1,47 @@
-# ManualAngular
+# Manual de Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+## ¿Qué es el Manual de Angular?
 
-## Development server
+El Manual de Angular es un proyecto realizado por estudiantes del instituto IES Almudeyne localizado en Los Palacios y Villafranca, Sevilla.
+En este proyecto se trata de reunir toda la información sobre la versión más reciente de la tecnología Angular y exponerla de manera
+sencilla, todo recopilado dentro de una misma página, que se encuentra desarrollada con Angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## ¿En qué formato se presenta la información del Proyecto?
 
-## Code scaffolding
+En este proyecto se ha decidido que toda la información y recursos se encuentren disponibles desde la página web del mismo.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+De manera que desde la propia página web podrás encontrar disponibles los siguientes recursos:
 
-## Build
+* Descarga de pdf de la documentación del proyecto realizada en word.
+* Descarga de pdf de la presentación del proyecto realizada en canvas.
+* Visualización de un vídeo que explica conceptos sobre la tecnología.
+* Visualización de la documentación directamente desde la propia web.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Accesibilidad del proyecto
 
-## Running unit tests
+Aún estamos tratando de implementar mejoras en la accesibilidad del proyecto.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Hasta el momento, estas son las opciones de accesibilidad disponibles: 
 
-## Running end-to-end tests
+* Posibilidad de alternar entre modo oscuro y modo brillante.
+* Fotos con atributos descriptivos cómo ***alt***  y cómo ***title***.
+* Vídeo que explica toda la información presentada en la web.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## ¿Cómo arrancar el proyecto?
 
-## Further help
+Al ser un proyecto desarrollado en Angular, se ha de usar un servidor para arrancar nuestra aplicación.
+Para poder arrancar el servidor desde nuestra máquina, seguiremos los siguientes pasos:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Importar todo el proyecto desde la página de Github.
+2. Iniciar una terminal y desplazarnos hasta la carpeta que contiene el proyecto: `cd .../Manual_Angular`.
+3. Ejecutar el siguiente comando: `ng serve`.
+4. Buscar desde nuestro navegador la ruta en la que se ha abierto el servidor, normalmente es la siguiente: "http://localhost:4200/".
+5. ¡Disfruta explorando nuestro manual de Angular!
+
+## Integrantes del Proyecto
+
+* Juan Martín Candela
+* Antonio Jesús León Fernández
+* Jose María Mañero Brenes
+* David Dorante Lucas
+* Álvaro Sánchez Moreno

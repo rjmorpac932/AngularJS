@@ -1,0 +1,409 @@
+<details class="wrapper">
+
+    <summary>2 - Conceptos Básicos</summary>
+
+    <details>
+
+        <summary>2.1 - Componentes en Angular</summary>
+
+        <details>
+
+            <summary>2.1.1 - Creación de un componente</summary>
+
+            <p>Un componente en Angular es una parte de la web que contiene vista, estilos y lógica, pudiendo crear tus
+                propias etiquetas HTML y reutilizarlas en todas las páginas. <br>
+                Los componentes de Angular pueden recibir objetos javascript complejos y arrays para su configuración,
+                recibiendo un array de usuarios a pintar. <br>
+                Dentro de los componentes también se pueden llamar o hacer uso de otros componentes, adquiriendo una
+                estructura en forma de árbol.
+                Conociendo un poco qué son los componentes, vamos a pasar a la creación de estos:
+            </p>
+
+            <h2>- Angular CLI.</h2>
+
+            <ol>
+
+                <li>Abrimos el terminal y ejecutamos el siguiente comando:
+                    <code>ng generate component nombre_componente_a_crear</code>. Si queremos crear un componente con
+                    varias
+                    palabras, separamos cada palabra por guiones, en vez de por espacios.
+                </li>
+
+                <br>
+
+                <div class="modulo-img-container">
+                    <img src="assets/module_images/module2/2.1/2.1.1/1.webp"
+                        alt="Paso 1 cración de un componente ANGULAR CLI" title="Paso 1 cración de un componente">
+                </div>
+
+                <li>Dentro de la carpeta raíz podemos comprobar como se ha creado un archivos css, un archivo html, un
+                    archivo TypeScript y un archivo TypeScript para tests.</li>
+                <br>
+
+                <div class="modulo-img-container">
+                    <img src="assets/module_images/module2/2.1/2.1.1/2.webp"
+                        alt="Paso 2 cración de un componente ANGULAR CLI" title="Paso 2 cración de un componente">
+                </div>
+
+            </ol>
+
+            <h2>- Angular.</h2>
+
+            <ol>
+
+                <li>Tenemos que crear los archivos de los componentes y de las etiquetas a mano. Creamos una carpeta
+                    dentro de la carpeta app con el nombre del componente que quieras. Crearemos los 4 archivos (html,
+                    css, TypeScript):
+                </li>
+
+                <br>
+
+                <div class="modulo-img-container">
+                    <img src="assets/module_images/module2/2.1/2.1.1/2.webp"
+                        alt="Paso 1 cración de un componente ANGULAR" title="Paso 1 cración de un componente">
+                </div>
+
+                <li>Dentro de la carpeta creamos un archivo llamado “nombre-componente.component.ts”, por ejemplo,
+                    form.component.ts</li>
+                <br>
+
+                <li>Dentro del componente escribimos la siguiente estructura:
+                    <br>
+                    <br>
+                    <div class="modulo-img-container">
+                        <img src="assets/module_images/module2/2.1/2.1.1/3.webp"
+                            alt="Paso 1 cración de un componente ANGULAR" title="Paso 1 cración de un componente">
+                    </div>
+                    <br>
+                    a.- Selector: Es el nombre que va a tener la etiqueta HTML que sirve para usar dicho componente.
+                    Para nuestro ejemplo, sería: &lt;app-form&gt;&lt;/app-form&gt;.
+                    <br>
+                    b.- Standalone: Indica que el componente es independiente.
+                    <br>
+                    c.- Imports: Para importar módulos adicionales.
+                    <br>
+                    d.- TemplateUrls: Especifica la ubicación de los archivos HTML que contiene la estructura del
+                    componente.
+                    <br>
+                    e.- StyleUrl: especifica la ubicación de los archivos que aplican estilos al componente.
+                    <br>
+                    f.- La clase FormComponent: Declara la clase FormComponent como una clase de TypeScript y exporta el
+                    componente para que pueda ser utilizado en otros archivos si es necesario.
+                </li>
+                <br>
+                <li>
+                    En el HTML del componente de la aplicación (se encuentra en la carpeta app: app.component.html)
+                    incorporamos las etiquetas que deseemos incorporar. Para incorporar un componente dentro de otro,
+                    podremos hacerlo como en el siguiente ejemplo:
+                </li>
+
+                <br>
+
+                <div class="modulo-img-container">
+                    <img src="assets/module_images/module2/2.1/2.1.1/4.webp"
+                        alt="Paso 4 cración de un componente ANGULAR" title="Paso 4 cración de un componente">
+                </div>
+
+                <br>
+
+                <li>En el HTML del componente creado (form.component.html) es donde podremos introducir las etiquetas y
+                    elementos de html a mostrar.</li>
+
+            </ol>
+
+        </details>
+
+        <details>
+
+            <summary>2.1.2 - Propiedades y eventos.</summary>
+
+            <p>
+                Las propiedades de un componente en Angular se refieren a las variables o atributos definidos en la
+                clase del componente que determinan su estado y comportamiento. Estas propiedades pueden ser utilizadas
+                para almacenar datos, gestionar el estado interno del componente y facilitar la comunicación entre
+                componentes.
+            </p>
+
+            <h2>- Propiedades:</h2>
+
+            <ol>
+
+                <li><strong>Input Properties:</strong> son propiedades que permiten la comunicación entre componentes,
+                    decorándolos con el decorador `&commat;Input()` en el componente hijo. Además, permiten la
+                    transferencia de
+                    datos desde el componente padre al componente hijo. Por ejemplo: "&commat;Input() nombre: string;"
+                </li>
+
+                <li>
+                    <strong>Output Properties:</strong> se utilizan para emitir eventos desde un componente hijo al
+                    componente padre. Se suelen decorar con el decorador `&commat;Output()` y son instancias de la clase
+                    `EventEmitter`. Por ejemplo: &commat;Output() onEvento = new EventEmitter&lt;string&gt;();
+                </li>
+
+                <li>
+                    <strong>ngModel:</strong> se utiliza para implementar enlaces bidireccionales en los formularios,
+                    permitiendo la sincronización de datos entre el modelo y la vista. Por ejemplo: &lt;input
+                    [(ngModel)]="nombre" /&gt;
+                </li>
+
+            </ol>
+
+            <p>Los eventos son acciones que ocurren en la aplicación, como clics de ratón, cambios de entrada, cargas de
+                datos, etc. En el contexto de Angular, los eventos generalmente se refieren a las interacciones del
+                usuario con la interfaz de usuario o a cambios en el estado de la aplicación.
+            </p>
+
+            <h2>- Eventos:</h2>
+            <ol>
+
+                <li><strong>Event Binding:</strong> permite la respuesta a eventos del usuario, como clics de botones,
+                    cambios en cuadros de texto, etc. Además, se utiliza el paréntesis `()` para vincular un evento a un
+                    método en el componente. Por ejemplo: &lt;button (click)="onClick()"&gt;Haz click&lt;/button&gt;
+                </li>
+
+                <li>
+                    <strong>Eventos Personalizados:</strong> Eventos que puedes definir y emitir desde un componente
+                    hijo para ser capturados por un componente padre. Estos eventos son útiles cuando necesitas
+                    comunicación entre componentes. Por ejemplo:
+                </li>
+
+                <br>
+
+                <div class="modulo-img-container">
+                    <img src="assets/module_images/module2/2.1/2.1.2/1.webp"
+                        alt="Eventos personalizados ejemplo ANGULAR" title="Eventos personalizados ejemplo ANGULAR">
+                </div>
+
+                <br>
+
+                <li><strong>Eventos de ciclo de vida:</strong> Se refieren a una serie de ganchos o métodos específicos
+                    que son invocados en momentos clave durante el ciclo de vida de un componente. Estos eventos
+                    permiten a los desarrolladores ejecutar código en momentos específicos, como la inicialización, la
+                    actualización y la destrucción del componente. Ejemplo:
+                </li>
+
+                <br>
+
+                <div class="modulo-img-container">
+                    <img src="assets/module_images/module2/2.1/2.1.2/2.webp" alt="Eventos ciclo de vida ejemplo ANGULAR"
+                        title="Eventos ciclo de vida ejemplo ANGULAR">
+                </div>
+
+            </ol>
+
+        </details>
+
+    </details>
+
+    <details>
+
+        <summary>2.2 - Directivas en Angular.</summary>
+
+        <details>
+
+            <summary>2.2.1 - Directivas estructurales.</summary>
+
+            <p>
+                Las directivas estructurales en Angular, son un conjunto de funcionalidades que mejoran la flexibilidad
+                y claridad del código y que permiten a los desarrolladores:
+            </p>
+
+            <ul>
+                <li>Controlar y manipular la estructura del DOM en aplicaciones Angular.</li>
+                <li>Facilitar la creación, eliminación o repetición de elementos del DOM.</li>
+                <li>Operan según condiciones específicas o iteraciones sobre colecciones de datos.</li>
+                <li>Proporcionan un mecanismo declarativo para gestionar la representación visual de los componentes.
+                </li>
+                <li>Capacidad para afectar directamente a la estructura del DOM.</li>
+            </ul>
+
+            <p>
+                <strong>- Directiva &commat;if:</strong> (el usuarioExistente es una propiedad booleana de la clase que
+                la ponemos por defecto en true).
+            </p>
+
+            <br>
+
+            <div class="modulo-img-container">
+                <img src="assets/module_images/module2/2.2/2.2.1/1.webp" alt="Directiva @if ejemplo ANGULAR"
+                    title="Directiva @if ejemplo ANGULAR">
+            </div>
+
+            <p>En la clase: usuarioExistente:boolean = true;</p>
+
+            <p>
+                <strong>- Directiva &commat;for:</strong> Teniendo en cuenta que en la clase tenemos una propiedad
+                ‘animales’ que es un array de objetos (animales), con 2 atributos cada animal, el id y la especie. El
+                track es para identificar de manera única cada elemento de la lista para realizar un seguimiento de los
+                cambios (en versión 17+ es obligatorio ponerlo).
+            </p>
+
+            <div class="modulo-img-container">
+                <img src="assets/module_images/module2/2.2/2.2.1/2.webp" alt="Directiva @for ejemplo ANGULAR"
+                    title="Directiva @for ejemplo ANGULAR">
+            </div>
+
+            <p>Con este ejemplo iteramos por todos los animales (identificándose por su id) para mostrarlos en un
+                listado.</p>
+
+        </details>
+
+        <details>
+
+            <summary>2.2.2 - Directivas de atributo.</summary>
+
+            <p>
+                Las directivas de atributo en Angular, son un conjunto esencial de características que se utilizan para
+                manipular y controlar atributos y propiedades de elementos del DOM, facilitando la personalización
+                dinámica de atributos y estilos en la interfaz de usuario.
+                A diferencia de las directivas estructurales, no alteran la estructura del DOM.
+                Se centra en modificar atributos, estilos y comportamientos de elementos existentes.
+            </p>
+
+            <p>
+                Entre las Directivas de Atributo encontramos los diferentes tipos:
+            </p>
+
+            <ul>
+                <li><strong>ngModel:</strong> Se utiliza para implementar binding.</li>
+                <li><strong>ngClass:</strong> Se usa para añadir o eliminar varias clases CSS, para cambiar la
+                    apariencia.</li>
+                <li><strong>ngStyle:</strong> Se usa para añadir elementos que cambien la apariencia.</li>
+            </ul>
+
+            <p>
+                También podemos crear una Directiva de Atributos personalizada, según nuestras necesidades específicas.
+            </p>
+
+        </details>
+
+    </details>
+
+    <details>
+
+        <summary>2.3 - Servicios y dependencias.</summary>
+
+        <p>
+            Los servicios son clases TypeScript destinadas a encapsular lógica de negocio, manipulación de datos y
+            funcionalidades compartidas en una aplicación Angular, mientras que las dependencias son objetos o servicios
+            que otro objeto necesita para realizar sus servicios.
+        </p>
+
+        <details>
+
+            <summary>2.3.1 - Creación de servicios.</summary>
+
+            <p>
+                Un servicio es una Clase con un propósito específico. Los Servicios no dependen de ningún Componente,
+                así que varios componentes deberían poder usar el mismo servicio sin problemas. Ofrecen la posibilidad
+                de
+                encapsular las interacciones con el mundo exterior (por ejemplo servicios REST) o de compartir datos en
+                toda tu aplicación. También pueden ofrecer una lógica particular que no dependa de ningún Componente.
+            </p>
+
+            <p>
+                Como los servicios están pensados para ser usados por varios componentes, Angular ofrece un mecanismo
+                para facilitar el uso de estos Servicios. Lo que hacemos es definir los Servicios en los Módulos de
+                Angular, éste se encargará de crearlo cuando lo considere conveniente, y luego cuando necesitemos el
+                Servicio, se lo pedimos a Angular.
+            </p>
+
+            <br>
+
+            <div class="modulo-img-container">
+                <img src="assets/module_images/module2/2.3/2.3.1/1.webp" alt="Creación de servicios ejemplo 1 Angular"
+                    title="Creación de servicios ejemplo 1 Angular">
+            </div>
+
+            <br>
+
+            <h2>Funcionalidad de los servicios.</h2>
+
+            <p>
+                Se podría decir que los Servicios están para hacerle la vida más fácil a los Componentes (y sus
+                Templates). Los Componentes solo deberían saber cómo mostrar datos en su Template, ignorando cómo
+                conseguir esos datos a mostrar. Los Servicios sólo deberían saber cómo conseguir o procesar datos,
+                ignorando quién los va a usar. Esto hace que los componentes sean mucho más fáciles de leer y de
+                testear. Y todos felices y contentos.
+            </p>
+
+            <h2>Explicación de cómo se crea y usa un Servicio.</h2>
+
+            <p>
+                Los Servicios, al igual que los Component, son clases; la diferencia es que tienen la Metadata
+                &commat;Injectable(). ¿Qué significa esto de Injectable? Significa que cualquier Componente, Servicio o
+                Directiva puede usar este «Injectable» sin preocuparse de crearlo o destruirlo, ya que Angular se
+                encarga de «inyectarle» el servicio para ser usado por quien lo necesite, ahorrándose muchos dolores de
+                cabeza a la hora de crearlo o destruirlo, ya que Angular se encarga de todo eso.
+
+            </p>
+
+            <br>
+
+            <div class="modulo-img-container">
+                <img src="assets/module_images/module2/2.3/2.3.1/2.webp" alt="Creación de servicios ejemplo 2 Angular"
+                    title="Creación de servicios ejemplo 2 Angular">
+            </div>
+
+            <br>
+
+            <p>Lo único que hay que hacer es indicar que un Servicio es un «servicio» con la metadata
+                &commat;Injectable() registrándolo en Angular, y entonces ya podremos usar ese servicio.
+            </p>
+
+            <p>
+                Para crear el servicio con angular cli, simplemente introduciremos en la terminal de nuestro editor
+                (VSCode en este caso) el siguiente comando: <strong>ng generate service nombre-del-servicio</strong>.
+            </p>
+
+            <p>
+                Éste se nos creará dentro de la carpeta app, igual que al crear el componente. Lo único es que no nos
+                creará la carpeta donde contendrá los archivos, para ello, antes del nombre del servicio a la hora de
+                crearlo, le tendremos que poner una ruta de carpeta, por ejemplo: ng g service
+                carpeta-para-servicio/nombre-servicio.
+            </p>
+
+        </details>
+
+        <details>
+
+            <summary>2.3.2 - Inyección de dependencias.</summary>
+
+            <p>
+                Se encarga de proporcionar las dependencias necesarias a un componente, servicio u otro objeto durante
+                su creación, realizándolo de manera automática, mediante la inyección de dependencias.
+            </p>
+
+            <ul>
+                <li>Una vez creado el servicio, pasamos con la inyección de dependencias.</li>
+                <li>Para ello, inyectamos el servicio en el constructor del componente sobre el que estamos trabajando.
+                    Para ello, lo inyectamos de la siguiente forma. Importamos el servicio y posteriormente lo
+                    inyectamos dentro de la clase del componente.</li>
+            </ul>
+
+            <br>
+
+            <div class="modulo-img-container">
+                <img src="assets/module_images/module2/2.3/2.3.2/1.webp" alt="Inyección de dependencias ejemplo 1 ANGULAR"
+                    title="Inyección de dependencias ejemplo 1 ANGULAR">
+            </div>
+
+            <br>
+            
+            <p>
+                Al haber inyectado, ya simplemente habrá que darle funcionalidad al servicio, teniendo en cuenta que
+                habrá que utilizarlo a través de la instancia creada en la clase del componente
+            </p>
+
+            <br>
+
+            <div class="modulo-img-container">
+                <img src="assets/module_images/module2/2.3/2.3.2/2.webp" alt="Inyección de dependencias ejemplo 2 ANGULAR"
+                    title="Inyección de dependencias ejemplo 2 ANGULAR">
+            </div>
+
+        </details>
+
+    </details>
+
+</details>

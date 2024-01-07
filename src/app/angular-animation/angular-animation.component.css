@@ -1,0 +1,62 @@
+/* SVG ESTILOS */
+
+#angular-animation{
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#angular-animation-svg{
+    aspect-ratio: 2657/1413;
+}
+
+#angular-animation-yt{
+    display: none;
+    transition: all 1s linear;
+}
+
+#angular-animation-fondo{
+    width: 40%;
+    height: 40%;
+    transform: translateX(800px) translateY(400px);
+    transition: all 0.2s linear;
+}
+
+#angular-animation-logo{
+    transition: all 1s ease-in-out;
+}
+
+app-btn-snake{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#angular-animation-separator{
+    content: "";
+    height: 4px;
+    background-color: red;
+    width: 0%;
+}
+/* *********************** */
+
+/* Estilos vídeo */
+
+#angular-animation > div {
+    position: relative;
+    width: 80%;
+}
+
+#video-manual{
+    width: 100%;
+    height: 100%;
+    opacity: 0%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: none;
+    z-index: 100;
+}

@@ -1,0 +1,58 @@
+*{
+    font-size: 1.4rem;
+}
+
+summary{
+    font-size: 2.5rem;
+}
+
+details > article > details, details > details{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+details > article > details > summary{
+    font-size: 2.2rem;
+}
+details > details > summary{
+    font-size: 1.9rem;
+}
+
+ul li, ol li{
+    margin-top: 5px;
+}
+
+.modulo-img-container{
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modulo-img-container img{
+    width: 80%;
+}
+
+code{
+    font-size: 1.05rem;
+}
+
+@media (max-width: 500px){
+
+    *{
+        font-size: 1rem;
+    }
+
+    summary{
+        font-size: 2rem;
+    }
+
+    details > article > details > summary{
+        font-size: 1.7rem;
+    }
+
+    details > details > summary{
+        font-size: 1.3rem;
+    }
+}

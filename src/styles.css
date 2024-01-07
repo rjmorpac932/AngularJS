@@ -1,1 +1,89 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos Generales de la Aplicación */
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+:root{
+    color-scheme: dark;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lato','Courier New', Courier, monospace;
+}
+
+summary:hover{
+    cursor: pointer;
+}
+
+#main-title{
+
+    display: none;
+    flex-direction: column ;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#main-title h1 {
+    text-align: center;
+    font-size: 4rem;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+#main-title > div{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#app-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+#app-container > h1{
+    margin-top: 5vh;
+    font-size: 3rem;
+    text-align: center;
+}
+.wrapper{
+    width: 80% ;
+    margin-left: 10%;
+}
+
+#inicio{
+    height: 90vh;
+    margin-top: 5vh;
+}
+
+#modulos{
+    display: none;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 500px){
+
+    #main-title > div{
+        flex-direction: column;
+        height: 150px;
+        justify-content: space-around;
+    }
+
+    #main-title > div{
+        flex-direction: column;
+    }
+
+    .wrapper{
+        width: 85%;
+    }
+
+}

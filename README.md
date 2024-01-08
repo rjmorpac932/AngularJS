@@ -17,6 +17,10 @@ De manera que desde la propia página web podrás encontrar disponibles los sigu
 * Visualización de un vídeo que explica conceptos sobre la tecnología.
 * Visualización de la documentación directamente desde la propia web.
 
+### ¿Cómo obtengo la documentación y la presentación sin tener que iniciar el servidor y descargarlo desde ahí?
+
+Los archivos de la documentación y la presentación se encuentran en la ruta "src/assets/downloads"
+
 ## Accesibilidad del proyecto
 
 Aún estamos tratando de implementar mejoras en la accesibilidad del proyecto.
@@ -37,6 +41,34 @@ Para poder arrancar el servidor desde nuestra máquina, seguiremos los siguiente
 3. Ejecutar el siguiente comando: `ng serve`.
 4. Buscar desde nuestro navegador la ruta en la que se ha abierto el servidor, normalmente es la siguiente: "http://localhost:4200/".
 5. ¡Disfruta explorando nuestro manual de Angular!
+
+## Reuniones del grupo
+
+### Reunión 1 : 
+
+* Fecha Inicio: 02/01/2024 - 15:45.
+
+* Fecha Fin: 02/01/2024 - 16:30.
+
+* Duración: 45 minutos.
+
+* Participantes: Juan Martín Candela, Antonio Jesús León Fernández, Jose María Mañero Brenes, Alvaro Sánchez Moreno, David Dorante Lucas.
+
+* Temas tratados: Reparto de tareas restantes, aclaración de dudas respecto al día final del primer sprint, aclaración de dudas respecto al uso de Angular.
+
+#### Resumen: 
+
+El reparto de tareas es el siguiente:
+
+* Juan Martín Candela: Creación de la página web que contendrá toda la información respecto al proyecto.
+
+* Antonio Jesús León Fernández: Terminar de redactar el último subapartado del punto 3 y unificar toda la información contenida en el word, de manera que quede limpia y ordenada. Una vez finalizado, apoyar a David y Álvaro en la creación de una presentación canvas.
+
+* Jose María Mañero Brenes: Crear un vídeo explicando los 3 módulos del proyecto.
+
+* Álvaro Sánchez Moreno: Crear una presentación canvas de los tres módulos del proyecto junto a David Dorante Lucas.
+
+* David Dorante Lucas: Crear una presentación canvas de los tres módulos del proyecto junto a Álvaro Sánchez Moreno.
 
 ## Integrantes del Proyecto
 

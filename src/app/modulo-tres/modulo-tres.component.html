@@ -1,373 +1,600 @@
 <details class="wrapper">
 
-    <summary>3 - Angular CLI y Proyecto.</summary>
-
-    <details>
-
-        <summary>3.1 - Creación de un nuevo proyecto.</summary>
-
-        <p>
-            Angular organiza el desarrollo de aplicaciones web en proyectos, proporcionando una estructura modular y
-            escalable para gestionar el código fuente, dependencias y configuraciones. Un proyecto en Angular es la
-            unidad principal que comprende todos los archivos y carpetas necesarias para construir y ejecutar una
-            aplicación Angular.
-        </p>
-
-        <ol>
-
-            <li>
-                Lo primero que debemos hacer es introducir el siguiente comando en el terminal de VS Code. Es importante
-                que el terminal donde introducimos este comando sea cmd y no Powershell o Git Bash.
-            </li>
-
-            <br>
-
-            <div class="modulo-img-container">
-                <img src="assets/module_images/module3/3.1/1.webp" alt="Paso 1 creación de un proyecto ANGULAR"
-                    title="Paso 1 creación de un proyecto ANGULAR">
-            </div>
-
-            <br>
-
-            <li>
-                A continuación, nos preguntará qué hoja de estilos deseamos usar, en nuestro caso le indicamos CSS y
-                luego nos preguntará si estamos seguros e introducimos una “y” le damos a Enter.
-            </li>
-
-            <br>
-
-            <div class="modulo-img-container">
-                <img src="assets/module_images/module3/3.1/2.webp" alt="Paso 2 creación de un proyecto ANGULAR"
-                    title="Paso 2 creación de un proyecto ANGULAR">
-            </div>
-
-            <br>
-
-            <li>Por último, nos pregunta si queremos habilitar el Server Side Rendering (la generación de la página
-                ocurre en el servidor cada vez que un usuario solicita una página), y el Static Site Generation (la
-                generación de la página ocurre durante la fase de compilación, antes de que la aplicación se despliegue
-                en producción) cuya función es mejorar el rendimiento y la experiencia del usuario. Para habilitarlo
-                escribimos “y” y pulsamos en Enter.
-            </li>
-
-            <br>
-
-            <div class="modulo-img-container">
-                <img src="assets/module_images/module3/3.1/2.webp" alt="Paso 3 creación de un proyecto ANGULAR"
-                    title="Paso 3 creación de un proyecto ANGULAR">
-            </div>
-
-            <br>
-
-            <p>Cabe destacar que si introducimos una “n” y pulsamos Enter, nos creará un proyecto más simple, pero que
-                no es recomendable debido a que no va a tener las características que nombramos anteriormente ya que no
-                habilitamos el Server Side Rendering y el Static Site Generation, por lo tanto empeorará el rendimiento
-                y la experiencia del usuario. Por lo tanto, esto hará que no aparezca el archivo server.ts.</p>
-
-            <li>En teoría ya está creado nuestro proyecto, ahora ejecutamos el siguiente comando para asegurarnos que
-                tenemos instaladas todas las dependencias en nuestro proyecto. Cabe destacar que este comando es
-                opcional aunque recomendable, ya que aseguras que la instalación ha sido correcta y tienes todas las
-                dependencias instaladas como podemos ver en la primera línea que nos muestra el “up to date”.
-            </li>
-
-            <br>
-
-            <div class="modulo-img-container">
-                <img src="assets/module_images/module3/3.1/3.webp" alt="Paso 4 creación de un proyecto ANGULAR"
-                    title="Paso 4 creación de un proyecto ANGULAR">
-            </div>
-
-            <br>
-
-            <p>También es importante tener en cuenta que debes estar situado en tu carpeta por lo tanto tendrás que
-                introducir el comando <strong>cd ruta-del-proyecto</strong> o te aparecerá un error.
-            </p>
-
-            <li>Una vez que ya hemos seguido todos los pasos nos debe aparecer lo siguiente en nuestro editor de código
-                VS Code.</li>
-
-        </ol>
-
-        <br>
-
-        <div class="modulo-img-container">
-            <img src="assets/module_images/module3/3.1/4.webp" alt="Paso 5 creación de un proyecto ANGULAR"
-                title="Paso 5 creación de un proyecto ANGULAR">
+    <summary>
+        <span class="summary-title">3 - Angular CLI y Proyecto.</span>
+        <div class="summary-chevron-up">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-chevron-down">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
         </div>
+    </summary>
 
-        <br>
+    <div class="summary-content">
 
-        <p>
-            Finalmente, introducimos el siguiente comando para iniciar el servidor de desarrollo de Angular,
-            introducimos una “y” y pulsamos en Enter. Como podemos ver nos aparece entre otras cosas la url localhost
-            que debemos introducir en nuestro navegador.
-        </p>
-
-        <br>
-
-        <div class="modulo-img-container">
-            <img src="assets/module_images/module3/3.1/5.webp" alt="Último paso creación de un proyecto ANGULAR"
-                title="Último paso creación de un proyecto ANGULAR">
-        </div>
-
-        <br>
 
         <details>
 
-            <summary>3.1.1 - Estructura del proyecto.</summary>
+            <summary>
+                <span class="summary-title">3.1 - Creación de un nuevo proyecto.</span>
+                <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
 
-            <br>
+            <div class="summary-content">
 
-            <div class="modulo-img-container">
-                <img src="assets/module_images/module3/3.1/3.1.1/1.webp"
-                    alt="Último paso creación de un proyecto ANGULAR" title="Estructura de un proyecto ANGULAR">
+                <p>
+                    Angular organiza el desarrollo de aplicaciones web en proyectos, proporcionando una estructura
+                    modular y
+                    escalable para gestionar el código fuente, dependencias y configuraciones. Un proyecto en Angular es
+                    la
+                    unidad principal que comprende todos los archivos y carpetas necesarias para construir y ejecutar
+                    una
+                    aplicación Angular.
+                </p>
+
+                <ol>
+
+                    <li>
+                        Lo primero que debemos hacer es introducir el siguiente comando en el terminal de VS Code. Es
+                        importante
+                        que el terminal donde introducimos este comando sea cmd y no Powershell o Git Bash.
+                    </li>
+
+                    <br>
+
+                    <div class="modulo-img-container">
+                        <img src="assets/module_images/module3/3.1/1.webp" alt="Paso 1 creación de un proyecto ANGULAR"
+                            title="Paso 1 creación de un proyecto ANGULAR">
+                    </div>
+
+                    <br>
+
+                    <li>
+                        A continuación, nos preguntará qué hoja de estilos deseamos usar, en nuestro caso le indicamos
+                        CSS y
+                        luego nos preguntará si estamos seguros e introducimos una “y” le damos a Enter.
+                    </li>
+
+                    <br>
+
+                    <div class="modulo-img-container">
+                        <img src="assets/module_images/module3/3.1/2.webp" alt="Paso 2 creación de un proyecto ANGULAR"
+                            title="Paso 2 creación de un proyecto ANGULAR">
+                    </div>
+
+                    <br>
+
+                    <li>Por último, nos pregunta si queremos habilitar el Server Side Rendering (la generación de la
+                        página
+                        ocurre en el servidor cada vez que un usuario solicita una página), y el Static Site Generation
+                        (la
+                        generación de la página ocurre durante la fase de compilación, antes de que la aplicación se
+                        despliegue
+                        en producción) cuya función es mejorar el rendimiento y la experiencia del usuario. Para
+                        habilitarlo
+                        escribimos “y” y pulsamos en Enter.
+                    </li>
+
+                    <br>
+
+                    <div class="modulo-img-container">
+                        <img src="assets/module_images/module3/3.1/2.webp" alt="Paso 3 creación de un proyecto ANGULAR"
+                            title="Paso 3 creación de un proyecto ANGULAR">
+                    </div>
+
+                    <br>
+
+                    <p>Cabe destacar que si introducimos una “n” y pulsamos Enter, nos creará un proyecto más simple,
+                        pero
+                        que
+                        no es recomendable debido a que no va a tener las características que nombramos anteriormente ya
+                        que
+                        no
+                        habilitamos el Server Side Rendering y el Static Site Generation, por lo tanto empeorará el
+                        rendimiento
+                        y la experiencia del usuario. Por lo tanto, esto hará que no aparezca el archivo server.ts.</p>
+
+                    <li>En teoría ya está creado nuestro proyecto, ahora ejecutamos el siguiente comando para
+                        asegurarnos
+                        que
+                        tenemos instaladas todas las dependencias en nuestro proyecto. Cabe destacar que este comando es
+                        opcional aunque recomendable, ya que aseguras que la instalación ha sido correcta y tienes todas
+                        las
+                        dependencias instaladas como podemos ver en la primera línea que nos muestra el “up to date”.
+                    </li>
+
+                    <br>
+
+                    <div class="modulo-img-container">
+                        <img src="assets/module_images/module3/3.1/3.webp" alt="Paso 4 creación de un proyecto ANGULAR"
+                            title="Paso 4 creación de un proyecto ANGULAR">
+                    </div>
+
+                    <br>
+
+                    <p>También es importante tener en cuenta que debes estar situado en tu carpeta por lo tanto tendrás
+                        que
+                        introducir el comando <strong>cd ruta-del-proyecto</strong> o te aparecerá un error.
+                    </p>
+
+                    <li>Una vez que ya hemos seguido todos los pasos nos debe aparecer lo siguiente en nuestro editor de
+                        código
+                        VS Code.</li>
+
+                </ol>
+
+                <br>
+
+                <div class="modulo-img-container">
+                    <img src="assets/module_images/module3/3.1/4.webp" alt="Paso 5 creación de un proyecto ANGULAR"
+                        title="Paso 5 creación de un proyecto ANGULAR">
+                </div>
+
+                <br>
+
+                <p>
+                    Finalmente, introducimos el siguiente comando para iniciar el servidor de desarrollo de Angular,
+                    introducimos una “y” y pulsamos en Enter. Como podemos ver nos aparece entre otras cosas la url
+                    localhost
+                    que debemos introducir en nuestro navegador.
+                </p>
+
+                <br>
+
+                <div class="modulo-img-container">
+                    <img src="assets/module_images/module3/3.1/5.webp" alt="Último paso creación de un proyecto ANGULAR"
+                        title="Último paso creación de un proyecto ANGULAR">
+                </div>
+
+                <br>
+
+                <details>
+
+                    <summary>
+                        <span class="summary-title">3.1.1 - Estructura del proyecto.</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module3/3.1/3.1.1/1.webp"
+                                alt="Último paso creación de un proyecto ANGULAR"
+                                title="Estructura de un proyecto ANGULAR">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            Como podemos observar en la imagen anterior se encuentra nuestra estructura del proyecto de
+                            Angular
+                            con
+                            los diferentes archivos y directorios que aparecen en la imagen.
+                        </p>
+                    </div>
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+
+                </details>
+
+                <details>
+
+                    <summary>
+                        <span class="summary-title">3.1.2 - Archivos principales.</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+
+                        <h2>Los archivos principales de nuestro proyecto son los siguientes:</h2>
+
+                        <h3>- Directorio .vscode :</h3>
+
+                        <ul>
+                            <li>
+                                <strong>- extensions.json</strong> Archivo autogenerado por Angular CLI dónde se indican
+                                recomendaciones de extensiones descargables en VSCODE que aportarán ayuda a la hora de
+                                utilizar
+                                Angular.
+                            </li>
+                        </ul>
+
+                        <h3>- Directorio node_modules:</h3>
+
+                        <p>
+                            En este directorio se encuentran las dependencias de Node.js y Angular que son necesarias
+                            para
+                            ejecutar
+                            y desarrollar la aplicación.
+                        </p>
+
+                        <h3>- Directorio src:</h3>
+
+                        <ul>
+
+                            <li>
+                                <strong>- assets:</strong> Directorio que contendrá los recursos del proyecto como
+                                pueden
+                                ser
+                                las
+                                fuentes, las imágenes, iconos, etc.
+                            </li>
+
+                            <li>
+                                <strong>- styles.css:</strong> Archivo dónde aparecen los estilos globales de nuestra
+                                aplicación.
+                            </li>
+
+                            <li>
+                                <strong>- main.ts:</strong> Es el punto de entrada de nuestra aplicación, es decir es el
+                                primer
+                                archivo que se carga, que importa los ficheros que contiene, etc. En resumen, inicializa
+                                la
+                                aplicación, viene por defecto y no es necesario modificar nada.
+                            </li>
+
+                            <li>
+                                <strong>- index.html:</strong> contiene la etiqueta &lt;app-root&gt;&lt;/app-root&gt;
+                                que
+                                sería
+                                la
+                                raíz de
+                                nuestra aplicación donde vamos a poner todos nuestros componentes. También aparece el
+                                head
+                                donde
+                                podemos añadir links, algún favicon, estilos, cambiar lenguaje, etc.
+                            </li>
+
+                            <li>
+                                <strong>- * main.server.ts:</strong> Facilita la inicialización de la aplicación Angular
+                                en
+                                el
+                                lado
+                                del servidor mediante el uso de la función `bootstrapApplication`. (Este archivo solo
+                                aparece
+                                cuando
+                                habilitamos el Server Side Rendering y el Static Site Generation).
+                            </li>
+
+                            <li>
+                                <strong>- favicon.ico:</strong> Es un icono.
+                            </li>
+
+                            <li>
+                                <strong>- Archivo .editorconfig:</strong> Contiene configuración sobre el editor la cual
+                                viene
+                                por
+                                defecto y no es necesario modificar nada.
+                            </li>
+
+                            <li>
+                                <strong>- Archivo .gitignore:</strong> Aquí aparecen los archivos y directorios los
+                                cuales
+                                excluirá
+                                git del control de versiones.
+                            </li>
+
+                            <li>
+                                <strong>- Archivo angular.json:</strong> Aquí podemos ver una configuración de angular
+                                donde
+                                aparece
+                                el tipo de proyecto, la arquitectura donde está toda la configuración, etc.
+                            </li>
+
+                            <li>
+                                <strong>- Archivo package.json:</strong> En primer lugar nos aparecen los scripts que
+                                utilizaremos,
+                                por lo tanto no es necesario utilizar los comandos anteriores. <br>
+                                Por otro lado contiene las dependencias de angular también vienen por defecto y tiene su
+                                parte
+                                positiva y negativa. La parte positiva es que viene en el proyecto, por lo tanto no es
+                                necesario
+                                perder tiempo instalando dependencias por nuestra cuenta (animaciones, formulario,
+                                enrutado,
+                                observables, testing, etc.). La parte mala es que muchas de las dependencias ya
+                                instaladas
+                                puede
+                                ser
+                                que no sean utilizadas en el proyecto, por lo que estarían ocupando hueco de más.
+                            </li>
+
+                            <li>
+                                <strong>- Archivo package.lock.json:</strong> Contiene más dependencias de angular y
+                                vienen
+                                por
+                                defecto.
+                            </li>
+
+                            <li>
+                                <strong>- Archivo README.md:</strong> Contiene información sobre cómo levantar el
+                                entorno de
+                                desarrollo, ejecutar tests unitarios, generar un nuevo componente, etc. Podemos decir
+                                que
+                                contiene
+                                una guía con información y sus respectivos comandos sobre cómo realizar algunas acciones
+                                sobre
+                                el
+                                proyecto.
+                            </li>
+
+                            <li>
+                                <strong>- Archivo * server.ts:</strong> Es un archivo TypeScript que contiene la
+                                implementación
+                                de
+                                un servicio. (Este archivo solo aparece cuando habilitamos el Server Side Rendering y el
+                                Static
+                                Site
+                                Generation).
+                            </li>
+
+                            <li>
+                                <strong>- Archivo tsconfig.app.json:</strong> Contiene configuración de typescript para
+                                la
+                                app
+                                al
+                                igual que para los tests, esta viene ya por defecto por lo que no hará falta modificar
+                                nada.
+                            </li>
+
+                            <li>
+                                <strong>- Archivo tsconfig.json:</strong> De nuevo más configuración de typescript más
+                                general y
+                                también sin necesidad de modificar nada.
+                            </li>
+
+                            <li>
+                                <strong>- Archivo tsconfig.spec.json:</strong> Configuración de typescript que viene
+                                instalado y
+                                su
+                                configuración viene ya por defecto por lo que no tendremos que cambiar nada aquí. Este
+                                archivo
+                                en
+                                específico sirve para la configuración de los tests.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+
+                </details>
+
+
             </div>
 
-            <br>
-
-            <p>
-                Como podemos observar en la imagen anterior se encuentra nuestra estructura del proyecto de Angular con
-                los diferentes archivos y directorios que aparecen en la imagen.
-            </p>
-
-        </details>
-
-        <details>
-
-            <summary>3.1.2 - Archivos principales.</summary>
-
-            <h2>Los archivos principales de nuestro proyecto son los siguientes:</h2>
-
-            <h3>- Directorio .vscode :</h3>
-
-            <ul>
-                <li>
-                    <strong>- extensions.json</strong> Archivo autogenerado por Angular CLI dónde se indican
-                    recomendaciones de extensiones descargables en VSCODE que aportarán ayuda a la hora de utilizar
-                    Angular.
-                </li>
-            </ul>
-
-            <h3>- Directorio node_modules:</h3>
-
-            <p>
-                En este directorio se encuentran las dependencias de Node.js y Angular que son necesarias para ejecutar
-                y desarrollar la aplicación.
-            </p>
-
-            <h3>- Directorio src:</h3>
-
-            <ul>
-
-                <li>
-                    <strong>- assets:</strong> Directorio que contendrá los recursos del proyecto como pueden ser las
-                    fuentes, las imágenes, iconos, etc.
-                </li>
-
-                <li>
-                    <strong>- styles.css:</strong> Archivo dónde aparecen los estilos globales de nuestra aplicación.
-                </li>
-
-                <li>
-                    <strong>- main.ts:</strong> Es el punto de entrada de nuestra aplicación, es decir es el primer
-                    archivo que se carga, que importa los ficheros que contiene, etc. En resumen, inicializa la
-                    aplicación, viene por defecto y no es necesario modificar nada.
-                </li>
-
-                <li>
-                    <strong>- index.html:</strong> contiene la etiqueta &lt;app-root&gt;&lt;/app-root&gt; que sería la
-                    raíz de
-                    nuestra aplicación donde vamos a poner todos nuestros componentes. También aparece el head donde
-                    podemos añadir links, algún favicon, estilos, cambiar lenguaje, etc.
-                </li>
-
-                <li>
-                    <strong>- * main.server.ts:</strong> Facilita la inicialización de la aplicación Angular en el lado
-                    del servidor mediante el uso de la función `bootstrapApplication`. (Este archivo solo aparece cuando
-                    habilitamos el Server Side Rendering y el Static Site Generation).
-                </li>
-
-                <li>
-                    <strong>- favicon.ico:</strong> Es un icono.
-                </li>
-
-                <li>
-                    <strong>- Archivo .editorconfig:</strong> Contiene configuración sobre el editor la cual viene por
-                    defecto y no es necesario modificar nada.
-                </li>
-
-                <li>
-                    <strong>- Archivo .gitignore:</strong> Aquí aparecen los archivos y directorios los cuales excluirá
-                    git del control de versiones.
-                </li>
-
-                <li>
-                    <strong>- Archivo angular.json:</strong> Aquí podemos ver una configuración de angular donde aparece
-                    el tipo de proyecto, la arquitectura donde está toda la configuración, etc.
-                </li>
-
-                <li>
-                    <strong>- Archivo package.json:</strong> En primer lugar nos aparecen los scripts que utilizaremos,
-                    por lo tanto no es necesario utilizar los comandos anteriores. <br>
-                    Por otro lado contiene las dependencias de angular también vienen por defecto y tiene su parte
-                    positiva y negativa. La parte positiva es que viene en el proyecto, por lo tanto no es necesario
-                    perder tiempo instalando dependencias por nuestra cuenta (animaciones, formulario, enrutado,
-                    observables, testing, etc.). La parte mala es que muchas de las dependencias ya instaladas puede ser
-                    que no sean utilizadas en el proyecto, por lo que estarían ocupando hueco de más.
-                </li>
-
-                <li>
-                    <strong>- Archivo package.lock.json:</strong> Contiene más dependencias de angular y vienen por
-                    defecto.
-                </li>
-
-                <li>
-                    <strong>- Archivo README.md:</strong> Contiene información sobre cómo levantar el entorno de
-                    desarrollo, ejecutar tests unitarios, generar un nuevo componente, etc. Podemos decir que contiene
-                    una guía con información y sus respectivos comandos sobre cómo realizar algunas acciones sobre el
-                    proyecto.
-                </li>
-
-                <li>
-                    <strong>- Archivo * server.ts:</strong> Es un archivo TypeScript que contiene la implementación de
-                    un servicio. (Este archivo solo aparece cuando habilitamos el Server Side Rendering y el Static Site
-                    Generation).
-                </li>
-
-                <li>
-                    <strong>- Archivo tsconfig.app.json:</strong> Contiene configuración de typescript para la app al
-                    igual que para los tests, esta viene ya por defecto por lo que no hará falta modificar nada.
-                </li>
-
-                <li>
-                    <strong>- Archivo tsconfig.json:</strong> De nuevo más configuración de typescript más general y
-                    también sin necesidad de modificar nada.
-                </li>
-
-                <li>
-                    <strong>- Archivo tsconfig.spec.json:</strong> Configuración de typescript que viene instalado y su
-                    configuración viene ya por defecto por lo que no tendremos que cambiar nada aquí. Este archivo en
-                    específico sirve para la configuración de los tests.
-                </li>
-
-            </ul>
-
-        </details>
-
-    </details>
-
-    <details>
-
-        <summary>3.2 - Uso básico de Angular CLI</summary>
-
-        <p>
-            Angular CLI (Command Line Interface) es una interfaz de línea de comandos que proporciona utilidades y
-            comandos para desarrollar, construir, probar y desplegar aplicaciones Angular de manera más eficiente. Fue
-            creado por el equipo de Angular para facilitar y agilizar el desarrollo de aplicaciones Angular.
-        </p>
-
-        <details>
-
-            <summary>3.2.1 - Comandos Esenciales</summary>
-
-            <h2>Los comandos más importantes para el uso básico de Angular CLI son:</h2>
-
-            <ul>
-
-                <li>
-                    <strong>- ng new:</strong> Crea un nuevo proyecto Angular.
-                    <br>
-                    <strong>ng new nombre-del-proyecto</strong>
-                </li>
-
-                <li>
-                    <strong>- ng serve:</strong> Inicia el servidor de desarrollo y abre la aplicación en un navegador
-                    <br>
-                    <strong>ng serve</strong>
-                </li>
-
-                <li>
-                    <strong>- ng build:</strong> Compila la aplicación para producción.
-                    <br>
-                    <strong>ng build</strong>
-                </li>
-
-                <li>
-                    <strong>- ng test:</strong> Ejecuta pruebas unitarias utilizando Karma.
-                    <br>
-                    <strong>ng test</strong>
-                </li>
-
-                <li>
-                    <strong>- ng e2e:</strong> Ejecuta pruebas E2E (end to end) utilizando Protractor
-                    <br>
-                    <strong>ng e2e</strong>
-                </li>
-
-                <li>
-                    <strong>- ng generate o ng g:</strong> Genera componentes, servicios, módulos y otros artefactos.
-                    <br>
-                    <strong>ng generate component nombre-del-componente</strong>
-                    <br>
-                    <strong>ng g service nombre-del-servicio</strong>
-                    <br>
-                    <strong>ng g module nombre-del-módulo</strong>
-                </li>
-
-                <li>
-                    <strong>- ng lint:</strong> Ejecuta TSLint para analizar el código en busca de posibles problemas.
-                    <br>
-                    <strong>ng lint</strong>
-                </li>
-
-            </ul>
+            <div class="summary-chevron-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-up">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
 
         </details>
 
         <details>
 
-            <summary>3.2.2 - Generación de componentes, servicios, y módulos.</summary>
+            <summary>
+                <span class="summary-title">3.2 - Uso básico de Angular CLI</span>
+                <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
 
-            <p>
-                A continuación vamos a ver los diferentes comandos para la generación de componentes, servicios y
-                módulos:
-            </p>
+            <div class="summary-content">
 
-            <ul>
+                <p>
+                    Angular CLI (Command Line Interface) es una interfaz de línea de comandos que proporciona utilidades
+                    y
+                    comandos para desarrollar, construir, probar y desplegar aplicaciones Angular de manera más
+                    eficiente.
+                    Fue
+                    creado por el equipo de Angular para facilitar y agilizar el desarrollo de aplicaciones Angular.
+                </p>
 
-                <li>
-                    <h2>Generar un componente: </h2>
-                    <br>
-                    <strong>ng generate component nombre-del-componente</strong>
-                    <br>
-                    <strong>ng g component nombre-del-componente</strong>
-                </li>
+                <details>
 
-                <li>
-                    <h2>Generar un servicio: </h2>
-                    <br>
-                    <strong>ng generate service nombre-del-servicio</strong>
-                    <br>
-                    <strong>ng g service nombre-del-servicio</strong>
-                </li>
+                    <summary>
+                        <span class="summary-title">3.2.1 - Comandos Esenciales</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
 
-                <li>
-                    <h2>Generar un módulo: </h2>
-                    <br>
-                    <strong>ng generate module nombre-del-módulo</strong>
-                    <br>
-                    <strong>ng g module nombre-del-módulo</strong>
-                </li>
+                    <div class="summary-content">
 
-            </ul>
+                        <h2>Los comandos más importantes para el uso básico de Angular CLI son:</h2>
 
-            <p>
-                Estos comandos sirven para crear de forma rápida y estructurada los diferentes componentes, servicios y
-                módulos, aunque también puedes personalizar aún más estos comandos según tus necesidades específicas.
-            </p>
+                        <ul>
+
+                            <li>
+                                <strong>- ng new:</strong> Crea un nuevo proyecto Angular.
+                                <br>
+                                <strong>ng new nombre-del-proyecto</strong>
+                            </li>
+
+                            <li>
+                                <strong>- ng serve:</strong> Inicia el servidor de desarrollo y abre la aplicación en un
+                                navegador
+                                <br>
+                                <strong>ng serve</strong>
+                            </li>
+
+                            <li>
+                                <strong>- ng build:</strong> Compila la aplicación para producción.
+                                <br>
+                                <strong>ng build</strong>
+                            </li>
+
+                            <li>
+                                <strong>- ng test:</strong> Ejecuta pruebas unitarias utilizando Karma.
+                                <br>
+                                <strong>ng test</strong>
+                            </li>
+
+                            <li>
+                                <strong>- ng e2e:</strong> Ejecuta pruebas E2E (end to end) utilizando Protractor
+                                <br>
+                                <strong>ng e2e</strong>
+                            </li>
+
+                            <li>
+                                <strong>- ng generate o ng g:</strong> Genera componentes, servicios, módulos y otros
+                                artefactos.
+                                <br>
+                                <strong>ng generate component nombre-del-componente</strong>
+                                <br>
+                                <strong>ng g service nombre-del-servicio</strong>
+                                <br>
+                                <strong>ng g module nombre-del-módulo</strong>
+                            </li>
+
+                            <li>
+                                <strong>- ng lint:</strong> Ejecuta TSLint para analizar el código en busca de posibles
+                                problemas.
+                                <br>
+                                <strong>ng lint</strong>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+
+                </details>
+
+                <details>
+
+                    <summary>
+                        <span class="summary-title">3.2.2 - Generación de componentes, servicios, y módulos.</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+
+                        <p>
+                            A continuación vamos a ver los diferentes comandos para la generación de componentes,
+                            servicios
+                            y
+                            módulos:
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                <h2>Generar un componente: </h2>
+                                <br>
+                                <strong>ng generate component nombre-del-componente</strong>
+                                <br>
+                                <strong>ng g component nombre-del-componente</strong>
+                            </li>
+
+                            <li>
+                                <h2>Generar un servicio: </h2>
+                                <br>
+                                <strong>ng generate service nombre-del-servicio</strong>
+                                <br>
+                                <strong>ng g service nombre-del-servicio</strong>
+                            </li>
+
+                            <li>
+                                <h2>Generar un módulo: </h2>
+                                <br>
+                                <strong>ng generate module nombre-del-módulo</strong>
+                                <br>
+                                <strong>ng g module nombre-del-módulo</strong>
+                            </li>
+
+                        </ul>
+
+                        <p>
+                            Estos comandos sirven para crear de forma rápida y estructurada los diferentes componentes,
+                            servicios y
+                            módulos, aunque también puedes personalizar aún más estos comandos según tus necesidades
+                            específicas.
+                        </p>
+
+                    </div>
+                    
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+
+                </details>
+            </div>
+            <div class="summary-chevron-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-up">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
 
         </details>
 
-    </details>
+    </div>
+
+    <div class="summary-chevron-down">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-chevron-up">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </div>
 
 </details>

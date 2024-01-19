@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './modulo-uno.component.html',
-  styleUrl: './modulo-uno.component.css'
+  styleUrl: '../modulo.css'
 })
 export class ModuloUnoComponent {
 

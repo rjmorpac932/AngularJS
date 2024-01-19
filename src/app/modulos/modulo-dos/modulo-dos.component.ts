@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './modulo-dos.component.html',
-  styleUrl: './modulo-dos.component.css'
+  styleUrl: '../modulo.css'
 })
 export class ModuloDosComponent {
 

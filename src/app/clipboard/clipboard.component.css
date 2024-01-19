@@ -1,0 +1,45 @@
+div.clipboard{
+    background-color: #f7f7f7;
+    width: calc(78%);
+    margin-left: 10%;
+    border: 1px solid #c6c6c6;
+    position: relative;
+    color: rgb(36, 36, 36);
+    font-size: 18px;
+    padding: 10px;
+}
+
+div.clipboard > div{
+    margin: 0px;
+    padding: 0px;
+}
+
+div p:first-child{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding: 0px;
+    margin: 0px;
+}
+
+fa-icon{
+    color: #3f3f3f;
+    font-size: 25px;
+}
+
+button{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 3px;
+    top: -10px;
+    background-color: transparent;
+    border: none;
+    transition: 100ms all linear;
+}
+
+button:hover{
+    cursor: pointer;
+    scale: 1.2;
+}

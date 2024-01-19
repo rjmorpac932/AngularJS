@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './modulo-tres.component.html',
-  styleUrl: './modulo-tres.component.css'
+  styleUrl: '../modulo.css'
 })
 export class ModuloTresComponent {
 

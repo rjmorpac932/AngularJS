@@ -1,15 +1,11 @@
-
-<div class="clipboard">
+<div class="clipboard" >
 
     <p>    
-        <button type="button" [cdkCopyToClipboard]="contenido">
+        <button type="button" [cdkCopyToClipboard]="contenido" (click)="showCopiado()">
             <fa-icon [icon]="faCopy"></fa-icon>
-            <span class="copy-anim"></span>
         </button>
     </p>
 
-    <div>
-        {{contenido}}
-    </div>
+    <pre>{{contenido}}</pre>
 
 </div>

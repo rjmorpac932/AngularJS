@@ -1,7 +1,6 @@
 div.clipboard{
     background-color: #f7f7f7;
-    width: calc(78%);
-    margin-left: 10%;
+    width: calc(100%);
     border: 1px solid #c6c6c6;
     position: relative;
     color: rgb(36, 36, 36);
@@ -9,7 +8,7 @@ div.clipboard{
     padding: 10px;
 }
 
-div.clipboard > div{
+div.clipboard > pre{
     margin: 0px;
     padding: 0px;
 }

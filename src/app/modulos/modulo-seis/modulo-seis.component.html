@@ -1,0 +1,790 @@
+<details class="wrapper">
+
+    <summary>
+        <span class="summary-title">6 - Formularios en Angular</span>
+        <div class="summary-chevron-up">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-chevron-down">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </summary>
+
+    <div class="summary-content">
+        <details>
+            <summary>
+                <span class="summary-title">6.1 - Formularios template-driven</span>
+                <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
+
+            <div class="summary-content">
+
+                <p>
+                    Los formularios template-driven, se conocen como formularios basados en plantillas, debido a que son
+                    impulsados por derivados en la plantilla, viendo derivados como ngModel en lugar del código, y
+                    utilizan enlace de datos bidireccional para actualizar el modelo de datos en el componente a medida
+                    que se realizan cambios en la plantilla y viceversa.
+                </p>
+
+                <details>
+                    <summary>
+                        <span class="summary-title">6.1.1 - Creación y validación.</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+                        <p>
+                            Los formularios template-driven son adecuados para formularios pequeños o simples. Además se
+                            pueden crear casi cualquier tipo de formularios: formularios de inicio de sesión,
+                            formularios de contacto y cualquier tipo de formulario de tipo comercial
+                        </p>
+
+                        <p>
+                            También, permite diseñar controles de forma creativa y vincularlos a los datos de su modelo
+                            de objeto, especificar reglas de validación y mostrar errores de validación, permitir
+                            condicionalmente entradas de controles específicos, activar comentarios visuales integrados,
+                            etc.
+                        </p>
+
+                        <p>
+                            Para la creación y validación de los formularios template-driven, tendremos que seguir los
+                            siguientes pasos:
+                        </p>
+
+                        <br>
+
+                        <h2>Creación</h2>
+
+                        <ol>
+                            <li>
+                                Creamos un proyecto y dos componentes en Angular.
+                            </li>
+
+                            <br>
+
+                            <app-clipboard contenido="{{c611creacionProyecto}}"></app-clipboard>
+
+                            <br>
+
+                            <li>
+                                En el html del componente (“src/app/form/form.component.html”), creamos la plantilla
+                                correspondiente de un formulario. Por ejemplo:
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.1/6.1.1/1.png" alt="Paso 2 Creación Formulario"
+                                    title="Paso 1 Creación Formulario">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                A continuación, nos vamos al typescript del componente creado
+                                (“src/app/form/form.component.ts”) y añadimos en la clase FormComponent las variable de
+                                “nombre” y “edad”.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.1/6.1.1/2.png" alt="Paso 3 Creación Formulario"
+                                    title="Paso 2 Creación Formulario">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                Añadimos el ngModel en las etiquetas html de la siguiente ruta
+                                (“src/app/form/form.component.html”) , y metemos las variables que le correspondan a
+                                cada input.
+                            </li>
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.1/6.1.1/3.png" alt="Paso 4 Creación Formulario"
+                                    title="Paso 3 Creación Formulario">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                Para solucionar los errores que nos aparecen al añadir el ngModel, importamos lo
+                                siguiente en el archivo form.component.ts.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.1/6.1.1/4.png" alt="Paso 5 Creación Formulario"
+                                    title="Paso 3 Creación Formulario">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                Por último, incluímos el componente dentro del proyecto creado, y arrancamos el
+                                proyecto.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.1/6.1.1/5.png" alt="Paso 6 Creación Formulario"
+                                    title="Paso 6 Creación Formulario">
+                            </div>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.1/6.1.1/6.png" alt="Paso 6 Creación Formulario"
+                                    title="Paso 6 Creación Formulario">
+                            </div>
+
+                        </ol>
+
+                        <h2>Validación: </h2>
+
+                        <ol>
+                            <li>
+                                Añadimos en los input del archivo form.component.html, required y una variable de
+                                plantilla que la llamaremos como queramos, siendo recomendable llamarla con un nombre
+                                parecido a la variable.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.1/6.1.1/7.png"
+                                    alt="Paso 1 Validación Formulario" title="Paso 1 Validación Formulario">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                A continuación de cada input, añadimos un div como en el siguiente ejemplo, el cuál va a
+                                validar los input, en los cuales ocultamos la advertencia con el “[hidden]”, cuando el
+                                nombre o la edad no estén vacíos y todo esto una vez que se haya pinchado en el campo o
+                                escrito, poniendo para ello : “[hidden] = “name.valid || name.pristine””. También, para
+                                impedir el envío del formulario, deshabilitamos el botón cuando el nombre o la edad no
+                                estén rellenos: “[disabled]="name.invalid || age.invalid"”
+                            </li>
+
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.1/6.1.1/8.png"
+                                    alt="Paso 2 Validación Formulario" title="Paso 2 Validación Formulario">
+                            </div>
+                        </ol>
+
+                    </div>
+
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <span class="summary-title">6.1.2 - Envío de Datos</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+                        <p>
+                            Para enviar datos de los formularios template-driven tendremos que seguir los siguientes
+                            pasos:
+                        </p>
+
+                        <ol>
+                            <li>
+                                En el archivo form.component.ts, dentro de la clase FormComponent, creamos una función,
+                                en este caso la llamamos onSubmit(), que se va a encargar de enviar por consola los
+                                campos que hemos rellenado.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.1/6.1.2/1.png" alt="Paso 1 Envío de Datos"
+                                    title="Paso 1 Envío de Datos">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                En el archivo form.component.html, en la etiqueta form, añadimos “ (ngSubmit) =
+                                “onSumbit()” “, para que al enviar el formulario, entre en función la función
+                                onSubmit(), y envíe los datos a la consola.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.1/6.1.2/2.png" alt="Paso 2 Envío de Datos"
+                                    title="Paso 2 Envío de Datos">
+                            </div>
+                        </ol>
+                    </div>
+
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+                </details>
+            </div>
+
+            <div class="summary-chevron-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-up">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
+        </details>
+
+        <details>
+            <summary>
+                <span class="summary-title">6.2 - Formularios Reactivos</span>
+                <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
+
+            <div class="summary-content">
+                <p>
+                    Tanto los formularios basados en plantillas como los reactivos capturan los eventos de entrada del
+                    usuario desde la vista, crean un modelo de formulario y un modelo de datos para actualizar y
+                    proporcionan una forma de rastrear los cambios. El enfoque reactivo es más robusto, son más
+                    escalables, reutilizables y comprobables. Si los formularios son una parte clave de su aplicación,
+                    conviene utilizar el modelo reactivo.
+                </p>
+
+                <details>
+                    <summary>
+                        <span class="summary-title">6.2.1 - Creación y validación</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+                        <ol>
+                            <li>
+                                Para empezar, crearemos un nuevo proyecto con el siguiente comando: Ng new nuevoProyecto
+                                y un componente donde trabajaremos con formulario reactivo: ng g c nombre_componente
+                            </li>
+
+                            <li>
+                                Una vez tengamos el proyecto bien configurado y con los componentes o componente
+                                importados en el app.component.ts, tendremos que importar en el módulo:
+                                ReactiveFormsModule, en el componente donde haremos el formulario
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.2/6.2.1/1.png"
+                                    alt="Paso 2 Creación y validación de formularios reactivos"
+                                    title="Paso 2 Creación y validación de formularios reactivos">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                Lo siguiente que haremos será crear un formulario que nosotros queramos en el componente
+                                actual, por ejemplo uno sencillo como este:
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.2/6.2.1/2.png"
+                                    alt="Paso 3 Creación y validación de formularios reactivos"
+                                    title="Paso 3 Creación y validación de formularios reactivos">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                Para trabajar con formularios reactivos tendremos que importar FormGroup y FormControl,
+                                que nos permitirá construir y gestionar formularios de manera programática y reactiva en
+                                lugar de utilizar directivas de formularios basadas en plantillas como ngModel. Aclarar
+                                que hay que importar formcontrol en los import del principio del archivo .ts, no dentro
+                                de la cadena de imports del decorador (&amp;Component).
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.2/6.2.1/3.png"
+                                    alt="Paso 4 Creación y validación de formularios reactivos"
+                                    title="Paso 4 Creación y validación de formularios reactivos">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                Una vez importado lo anterior correctamente, crearemos un FormGroup, con el que
+                                representaremos un grupo de controles (o campos) relacionados, dentro del formulario.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.2/6.2.1/4.png"
+                                    alt="Paso 5 Creación y validación de formularios reactivos"
+                                    title="Paso 5 Creación y validación de formularios reactivos">
+                            </div>
+
+                            <br>
+
+                            <p>
+                                En este ejemplo, reactForm es un FormGroup que contiene dos controles: nombre y
+                                apellidos.
+                            </p>
+
+                            <ul>
+                                <li>
+                                    FormControl: Representa un control individual en el formulario. En este caso, se
+                                    están creando dos FormControl dentro de reactForm: uno para el campo de nombre y
+                                    otro para el campo de apellidos.
+                                </li>
+
+                                <li>
+                                    new FormGroup y new FormControl: Instanciamos nuevos objetos FormGroup y FormControl
+                                    respectivamente. La inicialización de FormControl se realiza pasando un valor
+                                    predeterminado (“ ”) al constructor. En este caso, los campos de nombre y apellidos
+                                    comienzan con un valor vacío.
+                                </li>
+                                <br>
+
+                                <div class="modulo-img-container">
+                                    <img src="assets/module_images/module6/6.2/6.2.1/5.png"
+                                        alt="Paso 6 Creación y validación de formularios reactivos"
+                                        title="Paso 6 Creación y validación de formularios reactivos">
+                                </div>
+                            </ul>
+
+                            <li>
+                                Como podemos observar en la imagen, nos dirigiremos al html del componente para ponerlo
+                                aprueba y terminar de configurar el formulario reactivo. Para ello lo que haremos es
+                                indicar 2 cosas en la etiqueta del formulario (form):
+                            </li>
+
+                            <ul>
+                                <li>
+                                    [formGroup]=”nombreDelFormGroup” nos servirá para indicarle a qué grupo de formGroup
+                                    va a pertenecer este formulario.
+                                </li>
+
+                                <li>
+                                    Evento (ngSubmit)=”nombreDeLaFuncion”: para que cuando le demos click al boton tipo
+                                    submit que hay debajo del formulario, realice la funcion definida en la clase del
+                                    componente:
+                                </li>
+
+                                <br>
+                                <app-clipboard contenido="{{cImpPorCons}}"></app-clipboard>
+                                <br>
+                            </ul>
+
+                            <li>
+                                En este caso un console log de toda la información obtenida de los inputs del formulario
+                                donde le hayamos indicado con la propiedad “formControlName”, en el que tendremos que
+                                indicarle la variable del formGroup donde se va a almacenar.
+                            </li>
+
+                            <li>
+                                Por último, hemos puesto una lista del nombre y apellidos en el que indicaremos los
+                                valores obtenidos a través de los inputs que se han guardado en el g=formGroup (llamado
+                                reactForm) y a través de aquí es desde donde lo cogemos, es decir, la información ha
+                                viajado desde el html (vista) hasta la clase del componente donde se ha almacenado
+                                mientras la aplicación esté en funcionamiento. Luego en la lista la hemos llamado desde
+                                la clase, poniendo el nombre del formGroup, el valor y indicamos la propiedad que
+                                queremos extraer.
+                            </li>
+                        </ol>
+
+                        <h2>Ejemplo de Uso:</h2>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module6/6.2/6.2.1/6.png"
+                                alt="Paso 9 Creación y validación de formularios reactivos"
+                                title="Paso 9 Creación y validación de formularios reactivos">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            Al escribir en los inputs, se actualiza también en la lista, al mismo tiempo. Al darle al
+                            boton de enviar, nos mostrará por consola el objeto que contiene el formGroup con los
+                            valores obtenidos de los inputs.
+                        </p>
+
+                        <p>
+                            Ahora veremos la clase FormBuilder, ya que nos permite crear objetos de la clase FormGroup y
+                            FormControl con una sintaxis más corta. Es decir que el resultado final será el mismo al que
+                            obtenemos con la sintaxis vista anteriormente. Queda en decisión del desarrollador utilizar
+                            una u otra sintaxis.
+                        </p>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module6/6.2/6.2.1/7.png"
+                                alt="Paso 11 Creación y validación de formularios reactivos"
+                                title="Paso 11 Creación y validación de formularios reactivos">
+                        </div>
+
+                        <br>
+
+                        <ol>
+                            <li>
+                                Lo primero que haremos, como podemos observar en la captura, es importar FormBuilder.
+                            </li>
+
+                            <li>
+                                Declaramos una propiedad llamada reactForm que será de tipo FormGroup. Este formulario
+                                reactivo contendrá los controles para los campos nombre y apellidos.
+                            </li>
+
+                            <li>
+                                Definimos el constructor del componente donde recibe una instancia de FormBuilder como
+                                una dependencia inyectada. FormBuilder es una utilidad que facilita la creación de
+                                formularios reactivos.
+                            </li>
+
+                            <li>
+                                En la linea 16, dentro del constructor, utilizamos formBuilder para crear un FormGroup
+                                (utilizando el .group). El FormGroup es un grupo que contendrá todos los controles del
+                                formulario. En este caso, se crean dos controles, nombre y apellidos, ambos del tipo
+                                FormControl.
+                            </li>
+
+                            <li>
+                                Para las validaciones de formularios, deberemos de definir en los control del grupo de
+                                FormBuilder (en este caso de ejemplo) como se ve en la siguiente captura:
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.2/6.2.1/8.png"
+                                    alt="Paso 15 Creación y validación de formularios reactivos"
+                                    title="Paso 15 Creación y validación de formularios reactivos">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                Lo que hacemos es inicializar el controlador en cadena vacía en este caso, y luego
+                                añadimos las validaciones utilizando métodos de la clase Validators. En este caso hemos
+                                definido que el nombre tiene que ser obligatorio ponerlo y que su longitud sea mínimo de
+                                3 caracteres.
+                            </li>
+
+                            <li>
+                                En el html tendremos que definir las condiciones que veamos oportunas para guiar al
+                                cliente que esté rellenando el formulario:
+                            </li>
+
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.2/6.2.1/9.png"
+                                    alt="Paso 17 Creación y validación de formularios reactivos"
+                                    title="Paso 17 Creación y validación de formularios reactivos">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                Aquí hemos añadido dichas condiciones para indicarle al cliente que si el campo nombre
+                                no hay nada insertado, no puede estar vacío, en caso de que esté relleno pero tenga
+                                menos de 3 caracteres, indicará que el nombre deberá tener al menos 3 carácteres. Estos
+                                mensajes, en este caso, lo hemos indicado en la etiqueta span
+                            </li>
+
+                            <p>
+                                En la condición, la expresión que hemos puesto:
+                            </p>
+
+                            <app-clipboard contenido="{{cCondReactForm}}"></app-clipboard>
+                            <br>
+
+                            <p>
+                                cogemos el nombre que se está guardando en todo momento y actualizando en la variable
+                                nombre del grupo del formBuilder, identificará el error si es que tiene, y en el caso de
+                                que coincida con el tipo de error que está entre cadenas (en este caso: ‘required’ o
+                                ‘minlength’) devolverá true.
+                            </p>
+                        </ol>
+
+                        <h2>Ejemplo de Uso: </h2>
+
+                        <br>
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module6/6.2/6.2.1/10.png"
+                                alt="Paso 20 Creación y validación de formularios reactivos"
+                                title="Paso 20 Creación y validación de formularios reactivos">
+                        </div>
+                        <br>
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module6/6.2/6.2.1/11.png"
+                                alt="Paso 21 Creación y validación de formularios reactivos"
+                                title="Paso 21 Creación y validación de formularios reactivos">
+                        </div>
+                        <br>
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module6/6.2/6.2.1/12.png"
+                                alt="Paso 22 Creación y validación de formularios reactivos"
+                                title="Paso 22 Creación y validación de formularios reactivos">
+                        </div>
+                        <br>
+
+                    </div>
+
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <span class="summary-title">6.2.2 - Uso de Formularios Dinámicos</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+                        <p>
+                            Un formulario dinámico es cuando un formulario permite a un usuario generar campos con una
+                            acción. El formulario nunca va a saber cuantos campos quiere tener un usuario, por lo que el
+                            usuario tiene todo el control sobre la cantidad de campos que se generan. El usuario también
+                            puede quitar campos y eso es lo que hace la forma dinámica.
+                        </p>
+                        <p>
+                            Para este ejemplo, utilizaremos el formulario anterior en el que utilizamos FormBuilder, en
+                            el que añadiremos un campo nuevo llamado direcciones, el cual contendrá la calle, ciudad y
+                            cp, todo ello dentro de un formulario o div, para poder añadir más direcciones si el cliente
+                            quiere a través de un botón.
+                        </p>
+                        <br>
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module6/6.2/6.2.2/1.png"
+                                alt="Paso 3 Creación de formularios dinámicos"
+                                title="Paso 3 Creación de formularios dinámicos">
+                        </div>
+                        <br>
+
+                        <ul>
+                            <li>
+                                Podemos ver que hemos añadido en nuestro grupo del formbuilder, en la línea 19, un array
+                                donde guardaremos las direcciones.
+                            </li>
+
+                            <li>
+                                Hemos creado un getter que obtendrá el contenido de esas direcciones como un FormArray
+                                (habrá que importar este servicio), que se utiliza para manejar un conjunto dinámico de
+                                controles de formulario.
+                            </li>
+
+                            <li>
+                                Podemos ver que hemos creado una función para agregar direcciones, el cual consiste en
+                                crear una constante donde guardaremos los datos de la dirección nueva, como una
+                                instancia FormGroup. Por último, añádimos esta constante con sus valores al FormArray de
+                                direcciones del reactForm.
+                            </li>
+
+                            <li>
+                                Con la última función (imprimePorConsola) nos mostrará toda la información del
+                                reactForm, incluido las direcciones, como veremos en los siguientes ejemplos.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module6/6.2/6.2.2/2.png"
+                                    alt="Paso 8 Creación de formularios dinámicos"
+                                    title="Paso 8 Creación de formularios dinámicos">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                En en html podemos ver que hemos agregado un botón con la función de agregar direcciones
+                                que vimos anteriormente, y tambien un formulario justo debajo en el que, dentro de un
+                                bucle (donde iteramos por los controles que hay dentro del FormArray de direcciones),
+                                añadiremos los labels e inputs de la calle ciudad y codigo postal, utilizando
+                                formControlName en cada uno para asociar cada campo de entrada con el control de
+                                formulario correspondiente dentro del FormGroup.
+                            </li>
+
+                            <li>
+                                Utilizamos en la propia etiqueta form de este formulario de direcciones la propiedad:
+                                formArrayName="direcciones", que se utiliza para vincular el FormArray (direcciones) a
+                                un grupo de controles de formulario.
+                            </li>
+
+                            <li>
+                                En el div dentro del bucle añadimos la propiedad:
+                                formGroupName="{{cInterpolateException}}", que nos
+                                servirá para agrupar y asociar un conjunto específico de controles de formulario bajo un
+                                formulario más grande definido por un FormGroup (reactFrom en este caso).
+                            </li>
+                        </ul>
+                        <p>
+                            En los labels e inputs añadimos:
+                        </p>
+
+                        <ul>
+                            <li>
+                                Propiedad for=”nombreControlDeFormulario” + {{cInterpolateException}}”:
+                            </li>
+
+                            <p>
+                                Con esto, asociamos el texto del &lt;label&gt; con un control de formulario específico.
+                                El
+                                valor de for debe coincidir con el valor del atributo id del control de formulario
+                                correspondiente.
+                            </p>
+
+                            <li>
+                                Propiedad id="mismoNombreQueLabel + {{cInterpolateException}}":
+                            </li>
+
+                            <p>
+                                Se utiliza para identificar de manera única un control de formulario. El valor de id
+                                debe coincidir con el valor del atributo for del &lt;label&gt; que está asociado a ese
+                                control.
+                            </p>
+
+                            <li>
+                                Propiedad formControlName="calle":
+                            </li>
+
+                            <p>
+                                Lo utilizamos para indicarle a la variable del formGroup dónde se va a almacenar.
+                            </p>
+                        </ul>
+
+                        <h2>Ejemplos de Uso:</h2>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module6/6.2/6.2.2/3.png"
+                                alt="Paso 17 Creación de formularios dinámicos"
+                                title="Paso 17 Creación de formularios dinámicos">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            Podemos observar al desplegar la aplicación, que no hay ningun input para ingresar
+                            direcciones hasta que no le demos al botón de agregar.
+                        </p>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module6/6.2/6.2.2/4.png"
+                                alt="Paso 19 Creación de formularios dinámicos"
+                                title="Paso 19 Creación de formularios dinámicos">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            Aquí, al darle al boton de agregar dirección, nos insertará los 3 inputs de la dirección, en
+                            el que si lo rellenamos y le damos a enviar, podremos ver en la consola el reactForm, en el
+                            que veremos el array de direcciones con las direcciones que vayamos añádiendo.
+                        </p>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module6/6.2/6.2.2/5.png"
+                                alt="Paso 21 Creación de formularios dinámicos"
+                                title="Paso 21 Creación de formularios dinámicos">
+                        </div>
+                    </div>
+
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+                </details>
+            </div>
+
+            <div class="summary-chevron-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-up">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
+        </details>
+
+    </div>
+
+    <div class="summary-chevron-down">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-chevron-up">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </div>
+
+</details>

@@ -10,7 +10,7 @@ import { ModuloEventosComponent } from '../modulos/modulo-eventos/modulo-eventos
 @Component({
   selector: 'app-pagina-inicio',
   standalone: true,
-  imports: [AngularAnimationComponent, BtnPillComponent, ModuloUnoComponent, ModuloDosComponent, ModuloTresComponent, ModuloCuatroComponent, ModuloEventosComponent],
+  imports: [AngularAnimationComponent, BtnPillComponent, ModuloUnoComponent, ModuloDosComponent, ModuloTresComponent, ModuloCuatroComponent, ModuloEventosComponent, ModuloCuatroComponent],
   templateUrl: './pagina-inicio.component.html',
   styleUrl: './pagina-inicio.component.css',
 })

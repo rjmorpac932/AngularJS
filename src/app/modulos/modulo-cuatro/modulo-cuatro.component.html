@@ -13,8 +13,443 @@
 
     <div class="summary-content">
 
+        <details>
+
+            <summary>
+                <span class="summary-title">4.1 - Configuración de Rutas</span>
+                <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
+
+            <div class="summary-content">
+
+                <details>
+                    <summary>
+                        <span class="summary-title">4.1.1 - Configuración Básica</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+
+                        <p>
+                            Vamos a ver paso a paso cómo se configura una ruta básica:
+                        </p>
+
+                        <ol>
+                            <li>
+                                En primer lugar creamos los componentes necesarios, los cuales van a ser Home,
+                                Integrantes y Sobre-nosotros. Este paso no vamos a explicar cómo se crean los
+                                componentes, ya que ya lo hemos visto anteriormente.
+                            </li>
+
+                            <li>
+                                En segundo lugar, una vez hemos creado ya los componentes, nos vamos al archivo
+                                app.component.html donde vamos a introducir lo siguiente:
+                            </li>
+
+                            <br>
+
+                            <app-clipboard contenido="{{cAppComponent}}"></app-clipboard>
+
+                            <p>
+                                La etiqueta app-home la hemos introducido en el html padre ya que queremos que aparezca
+                                siempre, ya que va a ser la que contenga los enlaces de las rutas de los componentes
+                                Integrantes y Sobre-nosotros.
+                                Además introducimos la etiqueta router-outlet (obligatoria siempre que trabajemos con
+                                rutas) ya que de esta manera tendremos acceso a las rutas de los componentes Integrantes
+                                y Sobre-nosotros.
+
+                            </p>
+
+                            <li>
+                                Tercero, nos vamos al archivo app.component.ts e importamos el componente Home como el
+                                RouterOutlet, ya que la clase Home no va tener ruta sino que va a incluir los enlaces de
+                                las rutas, por lo tanto obtenemos el componente Home importandolo, y los componentes
+                                Integrantes y Sobre-nosotros, mediante el router-outlet.
+                            </li>
+
+                            <br>
+
+                            <app-clipboard contenido="{{cAppComponentImports}}"></app-clipboard>
+
+                            <br>
+
+                            <li>
+                                A continuación, una vez que hemos importado RouterOutlet debemos exportar las rutas en
+                                el archivo app.routes.ts de la siguiente manera:
+                            </li>
+
+                            <br>
+
+                            <app-clipboard contenido="{{cRoutesExample}}"></app-clipboard>
+
+                            <p>
+                                En la imagen hemos definido el path de las rutas de cada componente y hemos exportado
+                                dichos componentes. Además mediante path: ‘**’, redirectTo: ‘’, hacemos que en caso de
+                                introducir una ruta inexistente o errónea, nos dirija hacia la página principal que en
+                                este caso nos mostraría el app.component.html.
+                            </p>
+
+                            <li>
+                                5.- Una vez hemos completado el paso 4, mediante el elemento routerLink vamos a definir
+                                los enlaces de nuestro componente home a los componentes Integrantes y Sobre-nosotros,
+                                para ello debemos realizar los siguientes cambios tanto en nuestro archivo
+                                home.component.html como en home.component.ts:
+                            </li>
+
+                        </ol>
+
+                        <br>
+                        <app-clipboard contenido="{{cHomeHTML}}"></app-clipboard>
+                        <br>
+                        <app-clipboard contenido="{{cHomeTS}}"></app-clipboard>
+
+                        <p>
+                            Como podemos observar, en la primera imagen definimos el atributo routerLink y le
+                            introducimos /[nombre_carpeta_del_componente] en el elemento ‘a’; y en la segunda imagen,
+                            importamos en el archivo home.component.ts el routerLink.
+                        </p>
+
+                        <p>
+                            Una vez completado los pasos anteriores, ya tenemos nuestras rutas creadas las cuales se
+                            verían de la siguiente manera:
+                        </p>
+
+                        <br>
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module4/4.1/4.1.1/1.png" alt="Router Ejemplo 1"
+                                title="Router Ejemplo 1">
+                        </div>
+
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module4/4.1/4.1.1/2.png" alt="Router Ejemplo 2"
+                                title="Router Ejemplo 2">
+                        </div>
+
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module4/4.1/4.1.1/3.png" alt="Router Ejemplo 3"
+                                title="Router Ejemplo 3">
+                        </div>
+
+
+                    </div>
+
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+
+                </details>
+
+                <details>
+
+                    <summary>
+                        <span class="summary-title">4.1.2 - Rutas Anidadas</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+                        <p>
+                            A continuación vamos a ver cómo se crea una ruta anidada a raíz de las rutas simples que ya
+                            creamos anteriormente en el apartado 4.1.1:
+                        </p>
+
+                        <ol>
+                            <li>
+                                En primer lugar vamos a volver a crear dos componentes más llamados InfoInstituto e
+                                InfoAngular. Este paso no vamos a explicar cómo se crean los componentes, ya que ya lo
+                                hemos visto anteriormente.
+                            </li>
+
+                            <li>
+                                En segundo lugar, una vez que ya hemos dos nuevos componentes, nos vamos al archivo
+                                sobre-nosotros.component.ts ya que va a ser ahí donde vamos a añadir las rutas anidadas
+                                y procedemos a importar RouterLink:
+                            </li>
+
+                            <br>
+
+                            <app-clipboard contenido="{{cSobreNosotrosTS}}"></app-clipboard>
+
+                            <br>
+
+                            <li>
+                                A continuación, añadimos los elementos a con el atributo routerLink en el archivo
+                                sobre-nosotros.component.html.
+                            </li>
+
+                            <br>
+
+                            <app-clipboard contenido="{{cSobreNosotrosHTML}}"></app-clipboard>
+
+                            <br>
+
+                            <li>
+                                Por último, nos vamos al archivo app.routes.ts y exportamos las rutas las cuales al ser
+                                anidadas deben llevar el path del componente padre que en nuestro caso es
+                                sobre-nosotros, y además deben ir dentro de la propiedad children:[ ].
+                            </li>
+
+                        </ol>
+
+                        <br>
+
+                        <app-clipboard contenido="{{cRoutesExample2}}"></app-clipboard>
+
+                        <p>
+                            Finalmente nuestra página web quedará de la siguiente manera:
+                        </p>
+
+                        <br>
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module4/4.1/4.1.2/1.png" alt="Router Ejemplo 4"
+                                title="Router Ejemplo 4">
+                        </div>
+
+                        <br>
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module4/4.1/4.1.2/2.png" alt="Router Ejemplo 5"
+                                title="Router Ejemplo 5">
+                        </div>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module4/4.1/4.1.2/3.png" alt="Router Ejemplo 6"
+                                title="Router Ejemplo 6">
+                        </div>
+
+                    </div>
+
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+
+                </details>
+
+            </div>
+
+            <div class="summary-chevron-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-up">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
+
+        </details>
+
+        <details>
+            <summary>
+                <span class="summary-title">4.2 - Navegación entre componentes</span>
+                <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
+
+            <div class="summary-content">
+
+                <details>
+                    <summary>
+                        <span class="summary-title">4.2.1 - Uso de enlaces y rutas</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+                        <p>
+                            La navegación en una aplicación web principalmente se realiza desde la misma aplicación
+                            haciendo clicks sobre enlaces a otras vistas.
+                        </p>
+
+                        <p>
+                            En HTML, estos enlaces se realizan mediante la etiqueta y su atributo “href”, que sería
+                            donde pondríamos la dirección URL. Sin embargo, al haber creado un servicio Router, nos
+                            interesa que todo el control de rutas lo realice el mismo servicio.
+                            Por eso Angular dispone de las directivas RouterLink.
+                        </p>
+
+                        <p>
+                            Las directivas RouterLink nos permiten crear enlaces a partes específicas de nuestras
+                            aplicaciones.
+                        </p>
+
+                        <p>
+                            Si en las etiquetas sustituimos los atributos “href” por directivas RouterLink,
+                            conseguiremos que el servicio Router tome el control de todos estos elementos. Los path
+                            configurados en RouterLink pueden ser estáticos:
+                        </p>
+
+                        <app-clipboard contenido="{{cEjemploRouterLink1}}"></app-clipboard>
+
+                        <p>
+                            O también pueden ser dinámicos, donde usamos una cadena con literales y variables para
+                            formar el path dinámicamente:
+                        </p>
+
+                        <app-clipboard contenido="{{cEjemploRouterLink2}}"></app-clipboard>
+
+                        <p>
+                            En el primer ejemplo, se hace uso de la directiva routerLinkActive. Esta directiva sirve
+                            para aplicar una clase CSS al elemento cuando la ruta del link esté activa. De esta manera
+                            podremos distinguir qué enlace, de todos los visibles en la aplicación, es el que está
+                            activo.
+                        </p>
+
+                        <p>
+                            Por otra parte, el primer segmento del path puede venir precedido por “/”, “../” o “./”.
+                            Esto indica a Angular en qué parte del árbol de rutas realizar el link del path. Si, por el
+                            URL activo, el que aparece en la barra de direcciones, fuese “localhost:4200/libros” y
+                            quisiéramos desplazarnos a “localhost:4200/libros/comics”, en routeLink podríamos poner el
+                            path “/libros/comics” o “./comics” o “comics”.
+                        </p>
+
+                        <p>
+                            También se puede hacer un path con **, lo que funciona como ruta comodín. El asterisco en
+                            las rutas sirve para especificar que éstas coincidan con cualquier ruta que comience con la
+                            parte especificada antes del asterisco, lo que significa que una ruta con ** es
+                            especialmente útil para capturar cualquier ruta no coincidente. Esto suele ser usado para el
+                            manejo de errores. Por ejemplo:
+                        </p>
+
+                        <app-clipboard contenido="{{cRoutesExample3}}"></app-clipboard>
+
+                    </div>
+
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <span class="summary-title">4.2.2 - Parámetros de ruta</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+
+                        <p>
+                            En una configuración de rutas podríamos tener rutas con parámetros, es decir, rutas con una
+                            parte fija y otra variable. Por ejemplo:
+                        </p>
+
+                        <app-clipboard contenido="{{cRoutesExample4}}"></app-clipboard>
+
+                        <p>
+                            Con esto, se seleccionaría esta primera línea de configuración para direcciones URL como:
+                            “/libro/2, “/libro/aa” o “/libro/4vd”, pero no para direcciones como “libro/2/opiniones” o
+                            “libro/3/productos-relacionados”. Luego, el componente seleccionado accedería al valor del
+                            parámetro “:id” para realizar las acciones que convenga.
+                        </p>
+
+                        <p>
+                            Estas configuraciones van ubicadas en el app.routes.ts. También es importante mencionar que
+                            es recomendable exportar la configuración para poder reutilizar e importar las mismas rutas
+                            en diferentes partes del proyecto (también necesitará importar tanto Routes como cada
+                            componente utilizado en las rutas):
+                        </p>
+
+                        <app-clipboard contenido="{{cRoutesExample5}}"></app-clipboard>
+
+                        <p>
+                            Para obtener el valor de los parámetros que pueden venir por URL, el componente utiliza el
+                            objeto ActivatedRoute. ActivatedRoute contiene información de la ruta asociada al componente
+                            que actualmente tengamos cargado en la etiqueta “router-outlet”, por lo tanto, información
+                            de la actual ruta activa. Con el uso de la etiqueta router-outlet ya no será necesario
+                            llamar (ni importar) a cada componente sino que podremos acceder a cada uno según como se
+                            haya configurado en las rutas.
+                        </p>
+
+                        <p>
+                            A continuación vamos a ver los parámetros para configurar las rutas:
+                        </p>
+
+                        <h2>Obligatorios</h2>
+                        <ul>
+                            <li>path: Sirve para indicar la parte de la URL que activará un componente específico.</li>
+                            <li>component: Sirve para indicar el componente que será llamado con una URL específica.</li>
+                        </ul>
+                        <h2>Opcionales</h2>
+                        <ul>
+                            <li>data: Sirve para almacenar metadatos asociados a la ruta.</li>
+                            <li>title: Sirve para definir el título de una página.</li>
+                            <li>redirectTo: Sirve para redireccionar al usuario a otra ruta.</li>
+                            <li>pathMatch: Sirve para definir cómo debería coincidir la URL con la ruta definida con redirectTo (full/prefix).</li>
+                        </ul>
+                    </div>
+
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+                </details>
+
+            </div>
+
+            <div class="summary-chevron-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-up">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
+        </details>
+
     </div>
-    
+
     <div class="summary-chevron-down">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

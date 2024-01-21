@@ -49,10 +49,7 @@
 
                     <br>
 
-                    <div class="modulo-img-container">
-                        <img src="assets/module_images/module3/3.1/1.webp" alt="Paso 1 creación de un proyecto ANGULAR"
-                            title="Paso 1 creación de un proyecto ANGULAR">
-                    </div>
+                    <app-clipboard contenido={{cNuevoProyecto}}></app-clipboard>
 
                     <br>
 
@@ -112,10 +109,8 @@
 
                     <br>
 
-                    <div class="modulo-img-container">
-                        <img src="assets/module_images/module3/3.1/3.webp" alt="Paso 4 creación de un proyecto ANGULAR"
-                            title="Paso 4 creación de un proyecto ANGULAR">
-                    </div>
+                    <app-clipboard contenido={{cNpmInstall}}></app-clipboard>
+
 
                     <br>
 
@@ -148,10 +143,8 @@
 
                 <br>
 
-                <div class="modulo-img-container">
-                    <img src="assets/module_images/module3/3.1/5.webp" alt="Último paso creación de un proyecto ANGULAR"
-                        title="Último paso creación de un proyecto ANGULAR">
-                </div>
+                <app-clipboard contenido={{cNgServe}}></app-clipboard>
+
 
                 <br>
 
@@ -449,52 +442,62 @@
 
                             <li>
                                 <strong>- ng new:</strong> Crea un nuevo proyecto Angular.
-                                <br>
-                                <strong>ng new nombre-del-proyecto</strong>
                             </li>
+
+                            <br>
+                            <app-clipboard contenido={{cNuevoProyecto}}></app-clipboard>
+                            <br>
 
                             <li>
                                 <strong>- ng serve:</strong> Inicia el servidor de desarrollo y abre la aplicación en un
                                 navegador
-                                <br>
-                                <strong>ng serve</strong>
                             </li>
+
+                            <br>
+                            <app-clipboard contenido={{cNgServe}}></app-clipboard>
+                            <br>
 
                             <li>
                                 <strong>- ng build:</strong> Compila la aplicación para producción.
-                                <br>
-                                <strong>ng build</strong>
                             </li>
+
+                            <br>
+                            <app-clipboard contenido={{cNgBuild}}></app-clipboard>
+                            <br>
 
                             <li>
                                 <strong>- ng test:</strong> Ejecuta pruebas unitarias utilizando Karma.
-                                <br>
-                                <strong>ng test</strong>
                             </li>
+
+                            <br>
+                            <app-clipboard contenido={{cNgTest}}></app-clipboard>
+                            <br>
 
                             <li>
                                 <strong>- ng e2e:</strong> Ejecuta pruebas E2E (end to end) utilizando Protractor
-                                <br>
-                                <strong>ng e2e</strong>
                             </li>
+
+                            <br>
+                            <app-clipboard contenido={{cNgEndToEnd}}></app-clipboard>
+                            <br>
 
                             <li>
                                 <strong>- ng generate o ng g:</strong> Genera componentes, servicios, módulos y otros
                                 artefactos.
-                                <br>
-                                <strong>ng generate component nombre-del-componente</strong>
-                                <br>
-                                <strong>ng g service nombre-del-servicio</strong>
-                                <br>
-                                <strong>ng g module nombre-del-módulo</strong>
                             </li>
+
+                            <br>
+                            <app-clipboard contenido={{cNgGenerate}}></app-clipboard>
+                            <br>
 
                             <li>
                                 <strong>- ng lint:</strong> Ejecuta TSLint para analizar el código en busca de posibles
                                 problemas.
-                                <br>
-                                <strong>ng lint</strong>
                             </li>
+
+                            <br>
+                            <app-clipboard contenido={{cNgLint}}></app-clipboard>
+                            <br>
 
                         </ul>
                     </div>
@@ -534,27 +537,27 @@
 
                             <li>
                                 <h2>Generar un componente: </h2>
-                                <br>
-                                <strong>ng generate component nombre-del-componente</strong>
-                                <br>
-                                <strong>ng g component nombre-del-componente</strong>
                             </li>
+
+                            <br>
+                            <app-clipboard contenido={{cNgGenerate}}></app-clipboard>
+                            <br>
 
                             <li>
                                 <h2>Generar un servicio: </h2>
-                                <br>
-                                <strong>ng generate service nombre-del-servicio</strong>
-                                <br>
-                                <strong>ng g service nombre-del-servicio</strong>
                             </li>
+
+                            <br>
+                            <app-clipboard contenido={{cNgGenerateService}}></app-clipboard>
+                            <br>
 
                             <li>
                                 <h2>Generar un módulo: </h2>
-                                <br>
-                                <strong>ng generate module nombre-del-módulo</strong>
-                                <br>
-                                <strong>ng g module nombre-del-módulo</strong>
                             </li>
+
+                            <br>
+                            <app-clipboard contenido={{cNgGenerateModule}}></app-clipboard>
+                            <br>
 
                         </ul>
 

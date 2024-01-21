@@ -215,10 +215,14 @@
                                 decorándolos con el decorador `&commat;Input()` en el componente hijo. Además, permiten
                                 la
                                 transferencia de
-                                datos desde el componente padre al componente hijo. Por ejemplo: "&commat;Input()
-                                nombre:
-                                string;"
+                                datos desde el componente padre al componente hijo. Por ejemplo: 
                             </li>
+
+                            <br>
+
+                            <app-clipboard contenido="{{cEjemploInputPropiedad}}"></app-clipboard>
+
+                            <br>
 
                             <li>
                                 <strong>Output Properties:</strong> se utilizan para emitir eventos desde un componente
@@ -228,17 +232,23 @@
                                 de
                                 la
                                 clase
-                                `EventEmitter`. Por ejemplo: &commat;Output() onEvento = new
-                                EventEmitter&lt;string&gt;();
+                                `EventEmitter`. Por ejemplo:
                             </li>
 
+                            <br>
+
+                            <app-clipboard contenido="{{cEjemploOutputPropiedad}}"></app-clipboard>
+
+                            <br>
                             <li>
                                 <strong>ngModel:</strong> se utiliza para implementar enlaces bidireccionales en los
                                 formularios,
-                                permitiendo la sincronización de datos entre el modelo y la vista. Por ejemplo:
-                                &lt;input
-                                [(ngModel)]="nombre" /&gt;
+                                permitiendo la sincronización de datos entre el modelo y la vista.
                             </li>
+
+                            <br>
+                            <app-clipboard contenido="{{cEjemploNgModelPropiead}}"></app-clipboard>
+                            <br>
 
                         </ol>
 
@@ -260,9 +270,13 @@
                                 cambios en cuadros de texto, etc. Además, se utiliza el paréntesis `()` para vincular un
                                 evento
                                 a un
-                                método en el componente. Por ejemplo: &lt;button (click)="onClick()"&gt;Haz
-                                click&lt;/button&gt;
+                                método en el componente. Por ejemplo:
                             </li>
+
+                            <br>
+                            <app-clipboard contenido="{{cEjemploEventBinding}}"></app-clipboard>
+
+                            <br>
 
                             <li>
                                 <strong>Eventos Personalizados:</strong> Eventos que puedes definir y emitir desde un
@@ -274,11 +288,12 @@
 
                             <br>
 
-                            <div class="modulo-img-container">
-                                <img src="assets/module_images/module2/2.1/2.1.2/1.webp"
-                                    alt="Eventos personalizados ejemplo ANGULAR"
-                                    title="Eventos personalizados ejemplo ANGULAR">
-                            </div>
+                            <app-clipboard contenido="{{cEjemploPropagacionEventoHTML}}"></app-clipboard>
+
+                            <br>
+
+                            <app-clipboard contenido="{{cEjemploPropagacionEventoTS}}"></app-clipboard>
+
 
                             <br>
 
@@ -294,11 +309,8 @@
 
                             <br>
 
-                            <div class="modulo-img-container">
-                                <img src="assets/module_images/module2/2.1/2.1.2/2.webp"
-                                    alt="Eventos ciclo de vida ejemplo ANGULAR"
-                                    title="Eventos ciclo de vida ejemplo ANGULAR">
-                            </div>
+                            <app-clipboard contenido="{{cEjemploEventoCicloVida}}"></app-clipboard>
+
 
                         </ol>
 
@@ -380,12 +392,8 @@
                             la ponemos por defecto en true).
                         </p>
 
-                        <br>
+                        <app-clipboard contenido="{{cDirectivaIf}}"></app-clipboard>
 
-                        <div class="modulo-img-container">
-                            <img src="assets/module_images/module2/2.2/2.2.1/1.webp" alt="Directiva @if ejemplo ANGULAR"
-                                title="Directiva @if ejemplo ANGULAR">
-                        </div>
 
                         <p>En la clase: usuarioExistente:boolean = true;</p>
 
@@ -402,10 +410,7 @@
                             cambios (en versión 17+ es obligatorio ponerlo).
                         </p>
 
-                        <div class="modulo-img-container">
-                            <img src="assets/module_images/module2/2.2/2.2.1/2.webp"
-                                alt="Directiva @for ejemplo ANGULAR" title="Directiva @for ejemplo ANGULAR">
-                        </div>
+                        <app-clipboard contenido="{{cDirectivaFor}}"></app-clipboard>
 
                         <p>Con este ejemplo iteramos por todos los animales (identificándose por su id) para mostrarlos
                             en
@@ -613,9 +618,10 @@
                         <p>
                             Para crear el servicio con angular cli, simplemente introduciremos en la terminal de nuestro
                             editor
-                            (VSCode en este caso) el siguiente comando: <strong>ng generate service
-                                nombre-del-servicio</strong>.
+                            (VSCode en este caso) el siguiente comando:
                         </p>
+
+                        <app-clipboard contenido="{{cCrearServicio}}"></app-clipboard>
 
                         <p>
                             Éste se nos creará dentro de la carpeta app, igual que al crear el componente. Lo único es
@@ -626,8 +632,7 @@
                             la
                             hora
                             de
-                            crearlo, le tendremos que poner una ruta de carpeta, por ejemplo: ng g service
-                            carpeta-para-servicio/nombre-servicio.
+                            crearlo, le tendremos que poner una ruta de carpeta, por ejemplo: ng generate service services/servicio.
                         </p>
 
 

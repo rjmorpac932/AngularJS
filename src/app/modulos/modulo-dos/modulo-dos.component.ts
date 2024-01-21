@@ -24,5 +24,44 @@ import {Component} from "@angular/core";
 })
 
 export class FormComponent{}`;
-  /************************/
+
+cEjemploInputPropiedad = `@Input() nombre: string = ''`;
+cEjemploOutputPropiedad = `@Output() onEvento = new EventEmitter<string> ();`;
+cEjemploNgModelPropiead = `<input [(ngModel)]="nombre">`;
+cEjemploEventBinding = `<button (click)="onClick()">Haz Click</button>`;
+cEjemploPropagacionEventoTS = 
+`// src/eventoComponent/evento.component.ts
+@Output() propagar = new EventEmitter<string>();
+
+onPropagar(){
+  this.propagar.emit("Este dato viajará hacia el padre");
+}`;
+cEjemploPropagacionEventoHTML=
+`// src/eventoComponent/evento.component.html
+<p>
+  <input type="text" [(ngModel)]="mensaje">
+  <button (click)="onPropagar()">Propagar</button>
+</p>`;
+cEjemploEventoCicloVida=
+`export clas EjemploComponente implements OnInit{
+  ngOnInit(){
+    alert("Hola mundo");
+  }
+}`;
+cDirectivaIf =
+`@if(usuarioExistente){
+  <p>El usuario existe</p>
+}@else{
+  <p>El usuario no existe</p>
+}`;
+cDirectivaFor = 
+`<ul>
+  @for(a of animales; track a.id){
+    <li>{{a.especie}}</li>
+  }
+</ul>`;
+cCrearServicio = `ng generate service services/servicio`;
+
+  /* NO TOCAR INDENTACION - FIN */
+  
 }

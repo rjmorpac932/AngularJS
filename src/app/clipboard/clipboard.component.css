@@ -1,6 +1,6 @@
 div.clipboard{
     background-color: #f7f7f7;
-    width: calc(100%);
+    width: 90%;
     border: 1px solid #c6c6c6;
     position: relative;
     color: rgb(36, 36, 36);
@@ -11,6 +11,7 @@ div.clipboard{
 div.clipboard > pre{
     margin: 0px;
     padding: 0px;
+    overflow-x: scroll;
 }
 
 div p:first-child{

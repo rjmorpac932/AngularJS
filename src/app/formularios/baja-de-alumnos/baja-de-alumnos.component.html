@@ -1,0 +1,11 @@
+<form [formGroup]="bajaAlumnoForm" (ngSubmit)="darBaja()">
+    <h2>Baja de Alumnos</h2>
+    <div class="userContainer">
+        <label for="usuario">Usuario</label>
+        <br>
+        <br>
+        <input type="text" id="usuario" formControlName="usuario" />
+    </div>
+    <br>
+    <button type="submit">Dar de baja</button>
+</form>

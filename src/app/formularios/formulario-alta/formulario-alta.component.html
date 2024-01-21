@@ -1,0 +1,77 @@
+
+<form [formGroup]="formularioAlta" (ngSubmit)="enviarFormulario()">
+    <h2>Alta de Alumnos</h2>
+    <!-- Campo Nombre del Alumno -->
+    <label for="nombreAlumno">Nombre del Alumno:</label>
+    <input type="text" id="nombreAlumno" name="nombreAlumno" formControlName="nombreAlumno">
+
+    <br>
+
+    <!-- Campo Usuario -->
+    <div>
+        <label for="usuario">Usuario:</label>
+        <br>
+        <input type="text" id="usuario" name="usuario" formControlName="usuario" [readOnly]="true">
+
+        <!-- Botón para Generar Usuario -->
+        <button type="button" (click)="generarUsuario()">Generar Usuario</button>
+    </div>
+
+    <br>
+
+    <!-- Campo Contraseña -->
+    <div>
+
+        <label for="contrasena">Contraseña:</label>
+        <br>
+        <br>
+        <input type="password" id="contrasena" name="contrasena" formControlName="contrasena">
+
+        @if (this.formularioAlta.get('contrasena')?.errors?.['required']) {
+
+        <span>(La contraseña es obligatoria)</span>
+        } @else {
+        @if (this.formularioAlta.get('contrasena')?.errors?.['minlength']) {
+        <span>(La contraseña debe tener al menos 8 caracteres)</span>
+        } @else {
+        @if (this.formularioAlta.get('contrasena')?.errors?.['maxlength']) {
+        <span>(La contraseña debe tener máximo 12 caracteres)</span>
+        }
+        }
+        }
+    </div>
+    <br>
+
+    <!-- Campo Confirmar Contraseña -->
+    <div>
+        <label for="confirmarContrasena">Confirmar Contraseña:</label>
+        <br>
+        <br>
+        <input type="password" id="confirmarContrasena" name="confirmarContrasena" formControlName="confirmarContrasena">
+    
+        @if (this.formularioAlta.get('confirmarContrasena')?.errors?.['required']) {
+    
+        <span>(La contraseña es obligatoria)</span>
+        } @else {
+        @if (this.formularioAlta.get('confirmarContrasena')?.errors?.['minlength']) {
+        <span>(La contraseña debe tener al menos 8 caracteres)</span>
+        } @else {
+        @if (this.formularioAlta.get('confirmarContrasena')?.errors?.['maxlength']) {
+        <span>(La contraseña debe tener máximo 12 caracteres)</span>
+        }
+        }
+        }
+    </div>
+
+    <br>
+
+    <!-- Botón de Enviar -->
+    <button type="submit">Enviar</button>
+
+    <div id="tablaUsuarios" [innerHTML]="tablaUsuario">
+
+
+    </div>
+
+
+</form>

@@ -1,0 +1,67 @@
+<div>
+    <form [formGroup]="reactForm" (ngSubmit)="imprimePorConsola()">
+        <h2>Login</h2>
+
+        <div>
+            <label for="usuario">Usuario: </label>
+            <br>
+            <br>
+            <input type="text" class="form-control"  formControlName="usuario" placeholder="Escribe su usuario">
+            @if (this.reactForm.get('usuario')?.errors?.['required']){
+                <span>(El nombre debe de estar relleno)</span>
+            }
+        </div>
+
+        <br>
+
+        <div>
+            <label for="password">Contraseña: </label>
+            <br>
+            <br>
+            <input type="password" class="form-control" formControlName="password"  placeholder="Escribe su contraseña">
+            @if(this.reactForm.get('password')?.errors?.['required']){
+                <span>(La contraseña debe de estar rellena)</span>
+            } @else {
+                @if (this.reactForm.get('password')?.errors?.['minlength']){
+                    <span>(La contraseña debe de contener un mínimo de 6 caracteres)</span>
+                }@else{
+                    @if (this.reactForm.get('password')?.errors?.['maxlength']){
+                        <span>(La contraseña debe de contener un máximo de 12 caracteres)</span>
+                    }
+                }
+            }
+        </div>
+
+        <br>
+        
+        <button type="submit">Iniciar Sesión</button>
+
+        <br>
+
+        <a href="">¿Se te ha olvidado la contraseña?</a>
+
+    </form>
+</div>
+
+<!--<div id="tablaResultados">
+
+    <table>
+
+        <tr>
+
+            <th>Usuario</th>
+
+            <th>Contraseña</th>
+        
+        </tr>
+
+        <tr>
+
+            <td>{{reactForm.value.usuario}}</td>
+
+            <td>{{reactForm.value.password}}</td>
+
+        </tr>
+    
+    </table>
+</div>-->

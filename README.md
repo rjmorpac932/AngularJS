@@ -30,6 +30,7 @@ Hasta el momento, estas son las opciones de accesibilidad disponibles:
 * Posibilidad de alternar entre modo oscuro y modo brillante.
 * Fotos con atributos descriptivos cómo ***alt***  y cómo ***title***.
 * Vídeo que explica toda la información presentada en la web.
+* Posibilidad de copiar el código de los Clipboards con solo pulsar un botón.
 
 ## ¿Cómo arrancar el proyecto?
 

@@ -23,7 +23,6 @@
     </div>
  -->
 <details class="wrapper">
-
     <summary>
         <span class="summary-title">5 - Eventos en Angular</span>
         <div class="summary-chevron-up">
@@ -36,10 +35,9 @@
     </summary>
 
     <div class="summary-content">
-
         <details>
             <summary>
-                <span class="summary-title">5 - Eventos en Angular</span>
+                <span class="summary-title">5.1 - Event Binding</span>
                 <div class="summary-chevron-up">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -48,11 +46,32 @@
                     </svg>
                 </div>
             </summary>
-        
+
             <div class="summary-content">
-        
+                <p>
+                    En Angular, se puede asociar a los elementos HTML que se integran en
+                    los componentes eventos asociados propios de Angular, esta función se
+                    denomina Event Binding. Un ejemplo de esto podría ser el siguiente:
+                </p>
+
+                <app-clipboard contenido="{{ cEjemploEventBinding }}"></app-clipboard>
+
+                <p>
+                    Cómo se puede observar, todos los eventos asociados a los elementos
+                    que se quieran manejar directamente con Angular deberán ir entre
+                    paréntesis, y su valor deberá ir siempre entre comillas.
+                </p>
+
+                <p>
+                    De esta manera, el elemento “button” anteriormente descrito llamará a
+                    la función “holaMundo()”, en el momento en el que el cliente realice
+                    un evento “Click” sobre este botón. Un ejemplo de lo que puede hacer
+                    esta función sería el siguiente:
+                </p>
+
+                <app-clipboard contenido="{{ cEjemploHolaMundo }}"></app-clipboard>
             </div>
-            
+
             <div class="summary-chevron-down">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -61,7 +80,166 @@
                 </svg>
             </div>
         </details>
-        
+        <details>
+            <summary>
+                <span class="summary-title">5.2 - Cambio de Atributos con Eventos</span>
+                <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
+
+            <div class="summary-content">
+                <p>
+                    Los eventos también pueden cambiar de manera directa el estado de un
+                    componente, por lo que a veces no es necesario llamar a una función,
+                    un ejemplo de ello sería lo siguiente:
+                </p>
+                <app-clipboard contenido="{{ cCambioAtributoTS }}"></app-clipboard>
+                <br />
+                <app-clipboard contenido="{{ cCambioAtributoHTML }}"></app-clipboard>
+
+                <p>En este caso, el atributo isLogged pasará de tener el valor "false" a tener el valor "true" al hacer
+                    click en el botón.</p>
+            </div>
+
+            <div class="summary-chevron-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-up">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
+        </details>
+        <details>
+            <summary>
+                <span class="summary-title">5.3 - Manejo de Eventos</span>
+                <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
+
+            <div class="summary-content">
+                <p>
+                    Angular te da la opción de pasar cómo parámetro el evento a la hora de llamar a la función. De esta
+                    manera, se puede crear un botón que pueda tener distintas funciones en base al elemento que llama a
+                    la
+                    función.
+                </p>
+
+                <app-clipboard contenido="{{ cManejoEventosHTML }}"></app-clipboard>
+                <br>
+                <app-clipboard contenido="{{ cManejoEventosTS }}"></app-clipboard>
+
+                <p>En este caso pasamos como parámetro de la función el evento desde el HTML del componente.</p>
+            </div>
+
+            <div class="summary-chevron-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-up">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
+        </details>
+        <details>
+            <summary>
+                <span class="summary-title">5.4 - Eventos asociados a teclas</span>
+                <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
+
+            <div class="summary-content">
+
+                <p>En Angular, también se pueden manejar los eventos que se encuentran asociados a determinadas teclas,
+                    o
+                    combinaciones de estas mismas.
+                </p>
+
+                <p>
+                    La sintaxis que presentan estos tipos de eventos sería la siguiente:
+                </p>
+
+                <app-clipboard contenido="{{ cEventoTeclaUno }}"></app-clipboard>
+
+                <p>
+                    También se pueden concatenar combinaciones de teclas añadiendo un “.” y seleccionando el nombre de
+                    la
+                    tecla asociada al evento.
+                </p>
+
+                <app-clipboard contenido="{{ cEventoTeclaDos }}"></app-clipboard>
+
+            </div>
+
+            <div class="summary-chevron-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-up">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
+        </details>
+
+        <details>
+            <summary>
+                <span class="summary-title">5.5 - Eventos de ciclo de vida</span>
+                <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
+
+            <div class="summary-content">
+
+                <p>
+                    En Angular, todos los componentes tienen un ciclo de vida, desde que son procesados por el DOM,
+                    hasta que son visualizados por el usuario.
+                </p>
+
+                <p>
+                    Angular nos permite manejar distintos eventos en función de en qué parte del ciclo de vida se
+                    encuentre nuestro componente. Por ejemplo:
+                </p>
+
+                <app-clipboard contenido="{{ cEjemploCicloVida }}"></app-clipboard>
+
+                <p>
+                    En este caso, el componente lanzará de manera automática la función “holaMundo()” al inicializarse
+                    en el DOM de la página.
+                </p>
+
+                <p>
+                    Para poder usar los eventos del ciclo de vida del componente será necesario importar e implementar
+                    la interfaz correspondiente al evento del ciclo de vida que queramos usar. Cada interfaz contendrá 
+                    una función correspondiente en dónde deberemos indicar las acciones a realizar.
+                </p>
+
+            </div>
+
+            <div class="summary-chevron-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-up">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
+        </details>
     </div>
 
     <div class="summary-chevron-down">
@@ -71,5 +249,4 @@
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </div>
-
 </details>

@@ -43,7 +43,7 @@ cEjemploPropagacionEventoHTML=
   <button (click)="onPropagar()">Propagar</button>
 </p>`;
 cEjemploEventoCicloVida=
-`export clas EjemploComponente implements OnInit{
+`export class EjemploComponente implements OnInit{
   ngOnInit(){
     alert("Hola mundo");
   }
@@ -63,5 +63,5 @@ cDirectivaFor =
 cCrearServicio = `ng generate service services/servicio`;
 
   /* NO TOCAR INDENTACION - FIN */
-  
+
 }

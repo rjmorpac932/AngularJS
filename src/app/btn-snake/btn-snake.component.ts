@@ -34,17 +34,7 @@ export class BtnSnakeComponent {
         easing: "linear",
         duration: 400
       });
-
-      const navbar: HTMLElement = document.querySelector("#navbar") as HTMLElement;
-      navbar.style.display = "block";
       
-      anime({
-        targets: navbar,
-        height: "80px",
-        duration: 400,
-        easing: "linear"
-      })
-
     }
 
   }

@@ -49,6 +49,7 @@ summary:hover{
     padding: 0px;
     margin: 0px;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 #main-title > div{
@@ -76,7 +77,7 @@ summary:hover{
 }
 
 #inicio{
-    height: 90vh;
+    height: auto;
     margin-top: 5vh;
 }
 

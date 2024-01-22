@@ -1,0 +1,41 @@
+<div>
+    <form [formGroup]="usuario" (ngSubmit)="enviarDatos()">
+        <h2>Búsqueda de Alumnos</h2>
+        <label>Busqueda de alumnos por nombre:</label>
+        <br>
+        <input type="text" name="nombre" placeholder="Introduzca nombre" formControlName="nombre">
+        <br>
+        <label>Busqueda de alumnos por username:</label>
+        <br>
+        <input type="text" name="username" placeholder="Introduzca usuario" formControlName="username">
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    @if (usuariosEncontrados && usuariosEncontrados.length > 0) {
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Primer Apellido</th>
+                <th>Segundo Apellido</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (usuario of usuariosEncontrados; track $index) { <!-- Seguimiento del índice de la iteración actual. $index es una variable proporcionada por Angular que representa el índice actual en el bucle.-->
+            <tr>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.apellido1 }}</td>
+                <td>{{ usuario.apellido2 }}</td>
+                <td>{{ usuario.username }}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    } @else{
+    <div>
+        <h3>Usuario no encontrado</h3>
+    </div>
+    }
+</div>

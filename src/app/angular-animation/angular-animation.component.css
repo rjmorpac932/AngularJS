@@ -6,12 +6,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: calc(100%-120px);
+    margin-top: 120px;
 }
 
 #angular-animation > div {
     position: relative;
-    width: 80%;
+    width: 70%;
 }
 
 #video-manual{

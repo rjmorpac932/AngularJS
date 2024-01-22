@@ -47,6 +47,8 @@ export class FormularioAltaComponent {
         // Manejar el caso en el que no hay suficientes palabras
         alert('Debe insertar su nombre y apellidos');
       }
+    }else{
+      alert('Debe insertar su nombre y apellidos');
     }
   }
 

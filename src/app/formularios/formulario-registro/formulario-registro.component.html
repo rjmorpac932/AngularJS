@@ -1,9 +1,8 @@
-
 <form [formGroup]="formularioRegistro" (ngSubmit)="enviarFormulario()">
-    <h2>Alta de Alumnos</h2>
-    <!-- Campo Nombre del Alumno -->
-    <label for="nombreAlumno">Nombre del Alumno:</label>
-    <input type="text" id="nombreAlumno" name="nombreAlumno" formControlName="nombreAlumno">
+    <h2>Registro de Usuarios</h2>
+    <!-- Campo Nombre de Usuario -->
+    <label for="nombreAlumno">Nombre de Usuario:</label>
+    <input type="text" id="nombreUsuario" name="nombreUsuario" formControlName="nombreUsuario">
 
     <br>
 
@@ -19,6 +18,21 @@
 
     <br>
 
+    <!-- Campo de Email -->
+    <div>
+        <label for="email">Correo Electrónico:</label>
+        <br>
+        <br>
+        <input type="email" id="email" name="email" formControlName="email">
+
+        @if (this.formularioRegistro.get('email')?.errors?.['required']) {
+        <span>(El email es obligatorio)</span>
+        }@else if (this.formularioRegistro.get("email")?.errors?.['emailMismatch']){
+        <span>(Debe introducir un email válido)</span>
+        }
+    </div>
+
+    <br>
     <!-- Campo Contraseña -->
     <div>
 
@@ -47,10 +61,11 @@
         <label for="confirmarContrasena">Confirmar Contraseña:</label>
         <br>
         <br>
-        <input type="password" id="confirmarContrasena" name="confirmarContrasena" formControlName="confirmarContrasena">
-    
+        <input type="password" id="confirmarContrasena" name="confirmarContrasena"
+            formControlName="confirmarContrasena">
+
         @if (this.formularioRegistro.get('confirmarContrasena')?.errors?.['required']) {
-    
+
         <span>(La contraseña es obligatoria)</span>
         } @else {
         @if (this.formularioRegistro.get('confirmarContrasena')?.errors?.['minlength']) {
@@ -58,6 +73,10 @@
         } @else {
         @if (this.formularioRegistro.get('confirmarContrasena')?.errors?.['maxlength']) {
         <span>(La contraseña debe tener máximo 12 caracteres)</span>
+        } @else {
+        @if(this.formularioRegistro.errors?.['passwordMismatch']){
+        <span>(La contraseña debe coincidir)</span>
+        }
         }
         }
         }

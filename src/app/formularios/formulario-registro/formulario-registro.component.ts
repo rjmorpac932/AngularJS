@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CustomValidators } from './custom-validators';
+import { CustomValidators } from '../custom-validators';
 @Component({
   selector: 'app-formulario-registro',
   standalone: true,

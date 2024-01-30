@@ -154,7 +154,7 @@ export class FormularioUsuariosComponent implements OnInit {
 
   generarUsuario(): void {
     //cogemos el valor introducido en el input nombre del alumno del GroupForm
-    const nombreCompleto = this.formularioModificarUsuario.get('nombreUsuario')?.value;
+    const nombreCompleto = this.formularioModificarUsuario.get('nombreCompleto')?.value;
 
     if (nombreCompleto) {
       const palabras = nombreCompleto.split(' ');

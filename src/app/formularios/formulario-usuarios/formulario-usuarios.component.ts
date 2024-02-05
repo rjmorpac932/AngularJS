@@ -120,7 +120,9 @@ export class FormularioUsuariosComponent implements OnInit {
       iconoBorrar.classList.add("fa-solid", "fa-trash");
       iconoBorrar.setAttribute("data-usuario-id", id as string);
       const columnaBorrado = document.createElement("td");
+      columnaBorrado.classList.add("eliminarBtn");
       columnaBorrado.appendChild(iconoBorrar);
+      columnaBorrado.setAttribute("data-usuario-id", id as string);
       fila.appendChild(columnaBorrado);
 
       tablaUsuarioBody.appendChild(fila);

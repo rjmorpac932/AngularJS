@@ -109,6 +109,10 @@ summary:hover{
     cursor: pointer;
 }
 
+.eliminarBtn:hover{
+    cursor: pointer;
+}
+
 @media (max-width: 500px){
 
     #main-title > div{

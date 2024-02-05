@@ -6,7 +6,7 @@ import { ReactiveFormsModule, FormControl, FormGroup, FormBuilder } from '@angul
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './formulario-busqueda.component.html',
-  styleUrl: '../formulario.css'
+  styleUrl: '../../formulario.css'
 })
 export class FormularioBusquedaComponent {
 

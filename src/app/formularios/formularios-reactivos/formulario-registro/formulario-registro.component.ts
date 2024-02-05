@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CustomValidators } from '../custom-validators';
+import { CustomValidators } from '../../custom-validators';
 @Component({
   selector: 'app-formulario-registro',
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './formulario-registro.component.html',
-  styleUrl: '../formulario.css'
+  styleUrl: '../../formulario.css'
 })
 export class FormularioRegistroComponent {
 

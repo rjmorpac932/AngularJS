@@ -6,7 +6,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Va
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './formulario-alta.component.html',
-  styleUrl: '../formulario.css'
+  styleUrl: '../../formulario.css'
 })
 
 export class FormularioAltaComponent {

@@ -6,7 +6,7 @@ import { FormBuilder,FormControl, FormGroup, ReactiveFormsModule, Validators } f
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './formulario-login.component.html',
-  styleUrl: '../formulario.css'
+  styleUrl: '../../formulario.css'
 })
 
 export class FormularioLoginComponent  {

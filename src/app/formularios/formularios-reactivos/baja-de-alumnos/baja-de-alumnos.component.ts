@@ -6,7 +6,7 @@ import { FormBuilder, FormControl, FormGroup, Validators, ReactiveFormsModule } 
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './baja-de-alumnos.component.html',
-  styleUrl: '../formulario.css'
+  styleUrl: '../../formulario.css'
 })
 export class FormularioBajaComponent {
 

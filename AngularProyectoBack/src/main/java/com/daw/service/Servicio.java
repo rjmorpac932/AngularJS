@@ -25,4 +25,8 @@ public class Servicio {
 		return usuarioRepository.getReferenceById(id);
 	}
 	
+	public void eliminarUsuarios() {
+		usuarioRepository.eliminarUsuarios();
+	}
+	
 }

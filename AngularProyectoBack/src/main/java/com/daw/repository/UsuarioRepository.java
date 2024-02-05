@@ -14,4 +14,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 			+ " AND ( u.nombreCompleto LIKE %:nombreCompleto% ) ")
 	public List<Usuario> busquedaUsuarioGeneral(String usuario, String nombreCompleto);
 	
+	@Query(" DELETE FROM Usuario u ")
+	public void eliminarUsuarios();
+	
 }

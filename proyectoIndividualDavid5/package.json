@@ -1,5 +1,5 @@
 {
-  "name": "practica-individual5",
+  "name": "proyecto-individual-david5",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:practicaIndividual5": "node dist/practica-individual5/server/server.mjs"
+    "serve:ssr:proyectoIndividualDavid5": "node dist/proyecto-individual-david5/server/server.mjs"
   },
   "private": true,
   "dependencies": {

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "practicaIndividual5": {
+    "proyectoIndividualDavid5": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/practica-individual5",
+            "outputPath": "dist/proyecto-individual-david5",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "practicaIndividual5:build:production"
+              "buildTarget": "proyectoIndividualDavid5:build:production"
             },
             "development": {
-              "buildTarget": "practicaIndividual5:build:development"
+              "buildTarget": "proyectoIndividualDavid5:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "practicaIndividual5:build"
+            "buildTarget": "proyectoIndividualDavid5:build"
           }
         },
         "test": {
@@ -96,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "19f8fb8c-9ca3-434f-ba19-4f42399bb6be"
   }
 }

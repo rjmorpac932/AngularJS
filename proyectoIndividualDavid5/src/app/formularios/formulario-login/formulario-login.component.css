@@ -1,0 +1,18 @@
+#formularioLogin{
+    text-align: center;
+    margin: 15% 10% 0% 35%;
+    border-radius: 10px;
+    border: solid black 2px;
+    max-width: 400px;
+}
+
+#iniciarSesion{
+    margin: 1%;
+}
+
+#usuario{
+    margin: 1%;
+}
+#password{
+    margin-left: 2%;
+}

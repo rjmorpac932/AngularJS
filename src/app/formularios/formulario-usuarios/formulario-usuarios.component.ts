@@ -4,6 +4,7 @@ import { UsuarioDTO } from '../../../dto/usuarioDTO';
 import { CustomValidators } from '../custom-validators';
 import { faTrash, faPencil } from '@fortawesome/free-solid-svg-icons';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { response } from 'express';
 
 @Component({
   selector: 'app-formulario-usuarios',
@@ -20,6 +21,7 @@ export class FormularioUsuariosComponent implements OnInit {
   ngOnInit(): void {
     library.add(faTrash);
     library.add(faPencil);
+
   }
 
   faTrash = faTrash;
@@ -33,22 +35,30 @@ export class FormularioUsuariosComponent implements OnInit {
 
   formularioBusqueda: FormGroup;
   formularioModificarUsuario: FormGroup;
+  formularioCrearUsuario: FormGroup;
 
   isFormularioBusquedaVisible = true;
   isFormularioModificarVisible = false;
+  isFormularioCrearUsuarioVisible = false;
 
-  cambiarFormularioVisible() {
+  cambiarFormularioVisible(formulario: string) {
 
-    if (this.isFormularioBusquedaVisible) {
-
-      this.isFormularioBusquedaVisible = false;
-      this.isFormularioModificarVisible = true;
-
-    } else {
+    if (formulario === "buscar") {
 
       this.isFormularioBusquedaVisible = true;
       this.isFormularioModificarVisible = false;
+      this.isFormularioCrearUsuarioVisible = false;
 
+    } else if (formulario === "modificar") {
+
+      this.isFormularioBusquedaVisible = false;
+      this.isFormularioModificarVisible = true;
+      this.isFormularioCrearUsuarioVisible = false;
+
+    } else if (formulario === "crear") {
+      this.isFormularioBusquedaVisible = false;
+      this.isFormularioModificarVisible = false;
+      this.isFormularioCrearUsuarioVisible = true;
     }
 
   }
@@ -61,6 +71,17 @@ export class FormularioUsuariosComponent implements OnInit {
     });
 
     this.formularioModificarUsuario = this.formBuilder.group({
+      nombreCompleto: ['', Validators.required],
+      usuario: ['', Validators.required],
+      email: ['', [Validators.required, CustomValidators.emailMatch]],
+      fechaNacimiento: ['', [Validators.required, CustomValidators.dateMatch]],
+      peso: ['', [Validators.min(40), Validators.max(120)]],
+      altura: ['', [Validators.min(0.80), Validators.max(3)]],
+      contrasena: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(12)]],
+      confirmarContrasena: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(12)]]
+    }, { validators: CustomValidators.passwordMatch("contrasena", "confirmarContrasena") });
+
+    this.formularioCrearUsuario = this.formBuilder.group({
       nombreCompleto: ['', Validators.required],
       usuario: ['', Validators.required],
       email: ['', [Validators.required, CustomValidators.emailMatch]],
@@ -134,7 +155,7 @@ export class FormularioUsuariosComponent implements OnInit {
   async rellenarFormularioModificar(idUsuario: string | number) {
 
     const datosUsuario = await this.busquedaUsuarioById(idUsuario) as UsuarioDTO;
-    this.cambiarFormularioVisible();
+    this.cambiarFormularioVisible("modificar");
 
     //Cambiar los values de los inputs del formulario
     const { id, nombreCompleto, nombreUsuario, email, fechaNacimiento, peso, altura, password } = datosUsuario;
@@ -154,9 +175,9 @@ export class FormularioUsuariosComponent implements OnInit {
   ** FORMULARIO DE MODIFICADO DE USUARIO **
   */
 
-  generarUsuario(): void {
+  generarUsuario(formGroup: FormGroup): void {
     //cogemos el valor introducido en el input nombre del alumno del GroupForm
-    const nombreCompleto = this.formularioModificarUsuario.get('nombreCompleto')?.value;
+    const nombreCompleto = formGroup.get('nombreCompleto')?.value;
 
     if (nombreCompleto) {
       const palabras = nombreCompleto.split(' ');
@@ -169,7 +190,7 @@ export class FormularioUsuariosComponent implements OnInit {
         const usuarioGenerado = primeraLetraNombre + primerasTresLetrasPrimerApellido + primerasTresLetrasSegundoApellido + numeroAleatorio;
 
         // Actualizar el valor del campo 'usuario' en el formulario
-        this.formularioModificarUsuario.get('usuario')?.setValue(usuarioGenerado);
+        formGroup.get('usuario')?.setValue(usuarioGenerado);
       } else {
         // Manejar el caso en el que no hay suficientes palabras
         alert('Debe insertar su nombre y apellidos');
@@ -191,6 +212,63 @@ export class FormularioUsuariosComponent implements OnInit {
         if (emailPatron.test(this.formularioModificarUsuario.get("email")?.value)) {
           if (datePatron.test(this.formularioModificarUsuario.get("fechaNacimiento")?.value)) {
             //AQUI SE PONE LA FUNCIÓN (YA QUE HA PASADO TODAS LAS VALIDACIONES)
+          } else {
+            alert("Debe introducir una fecha válida");
+          }
+        } else {
+          alert("Debe introducir un correo válido");
+        }
+
+      } else {
+        alert("Debe generar el usuario");
+      }
+    }
+
+  }
+
+  // CREAR USUARIO 
+
+  crearUsuario() {
+
+    const emailPatron = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const datePatron = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+    const url = 'http://localhost:9999/formularios/usuarios';
+    // Creamos propiedad con los valores de los datos del usuario introducidos en el formulario
+    const datosUsuario = {
+      nombreCompleto: this.formularioCrearUsuario.get('nombreCompleto')?.value,
+      nombreUsuario: this.formularioCrearUsuario.get('usuario')?.value,
+      email: this.formularioCrearUsuario.get('email')?.value,
+      password: this.formularioCrearUsuario.get('contrasena')?.value,
+      fechaNacimiento: this.formularioCrearUsuario.get('fechaNacimiento')?.value,
+      peso: this.formularioCrearUsuario.get('peso')?.value,
+      altura: this.formularioCrearUsuario.get('altura')?.value
+    };
+
+    console.log(datosUsuario);
+    if (this.formularioCrearUsuario.get('contrasena')?.value !== this.formularioCrearUsuario.get('confirmarContrasena')?.value) {
+      alert('Las contraseñas no coinciden');
+    } else {
+      if (this.formularioCrearUsuario.get('usuario')?.value !== "") {
+        if ((emailPatron.test(this.formularioCrearUsuario.get("email")?.value) && this.formularioCrearUsuario.get("email")?.value != "")) {
+          if (datePatron.test(this.formularioCrearUsuario.get("fechaNacimiento")?.value)) {
+
+            // FUNCIÓN DE LA SOLICITUD POST
+
+            fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(datosUsuario)
+            }).then(response => {
+              if (!response.ok) {
+                alert('Error al crear el usuario');
+                throw new Error('Error al crear usuario');
+              }
+              alert('Usuario creado exitosamente');
+            });
+
+
           } else {
             alert("Debe introducir una fecha válida");
           }

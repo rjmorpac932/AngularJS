@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <div>
+        <form id="formularioUsuarios" [formGroup]="usuarios">
+            <h2>Cambiar Nombre Usuario</h2>
+            <div id="email">
+                <label>Email: </label>
+                <input type="email" placeholder="Introduzca correo electrónico" formControlName="email">
+                @if(this.usuarios.get('email')?.errors?.['required']){
+                    <br>
+                    <span id="spanEmail">El correo electrónico es obligatorio</span>
+                }
+            </div>
+            <div id="usuario">
+                <label>Nuevo Usuario: </label>
+                <input type="text" placeholder="Introduzca nuevo usuario " formControlName="usuario">
+                @if(this.usuarios.get('usuario')?.errors?.['required']){
+                    <br>
+                    <span id="spanUsuario">El usuario es obligatorio</span>
+                }
+            </div>
+            <button id="cambiarUsuario" class="btn btn-primary" (click)="modificarUsuario()">Cambiar</button>
+            <button id="cancelar" class="btn btn-secondary" (click)="cancelarUsuario()">Cancelar</button>
+        </form>
+    </div>
+

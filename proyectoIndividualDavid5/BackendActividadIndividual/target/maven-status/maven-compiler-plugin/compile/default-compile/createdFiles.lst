@@ -1,0 +1,6 @@
+com\daw\service\TesterService.class
+com\daw\controller\TesterController.class
+com\daw\repository\TesterRepository.class
+com\daw\model\Operador.class
+com\daw\JpaTesterApplication.class
+com\daw\model\Persona.class

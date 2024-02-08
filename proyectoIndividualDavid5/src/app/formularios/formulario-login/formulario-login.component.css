@@ -16,3 +16,15 @@
 #password{
     margin-left: 2%;
 }
+
+#spanUsuario{
+    background-color: rgb(255, 199, 199);
+    color: red;
+    margin-left: 14%;
+}
+
+#spanPassword{
+    background-color: rgb(255, 199, 199);
+    color: red;
+    margin-left: 25%;
+}

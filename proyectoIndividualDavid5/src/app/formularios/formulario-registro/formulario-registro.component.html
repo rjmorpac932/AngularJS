@@ -1,1 +1,57 @@
-<p>formulario-registro works!</p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <div>
+        <form id="formularioRegistro" [formGroup]="usuarios">
+            <h2>Registrar</h2>
+            <div id="nombre">
+                <label>Nombre: </label>
+                <input type="text" placeholder="Introduzca nombre" formControlName="nombre">
+                @if(this.usuarios.get('nombre')?.errors?.['required']){
+                    <br>
+                    <span id="spanNombre">El nombre es obligatorio</span>
+                }
+            </div>
+            <div id="usuario">
+                <label>Usuario: </label>
+                <input type="text" placeholder="Introduzca usuario" formControlName="usuario">
+                @if(this.usuarios.get('usuario')?.errors?.['required']){
+                    <br>
+                    <span id="spanUsuario">El usuario es obligatorio</span>
+                }
+            </div>
+            <div id="email">
+                <label>Email: </label>
+                <input type="text" placeholder="Introduzca correo electrónico" formControlName="email">
+                @if(this.usuarios.get('email')?.errors?.['required']){
+                    <br>
+                    <span id="spanEmail">El correo electrónico es obligatorio</span>
+                }
+            </div>
+            <div id="password">
+                <label>Contraseña: </label>
+                <input type="text" placeholder="Introduzca contraseña" formControlName="password">
+                @if(this.usuarios.get('password')?.errors?.['required']){
+                    <br>
+                    <span id="spanPassword">La contraseña es obligatoria</span>
+                }
+            </div>
+
+            <div id="fechaNacimiento">
+                <label>Fecha Nacimiento: </label>
+                <input type="date" placeholder="Introduzca fecha de nacimiento" formControlName="fechaNacimiento">
+                @if(this.usuarios.get('fechaNacimiento')?.errors?.['required']){
+                    <br>
+                    <span id="spanFechaNacimiento">La fecha de nacimiento es obligatoria</span>
+                }
+            </div>
+            <button id="registrar" class="btn btn-primary" (click)="registro()">Registrar</button>
+            <button id="cancelar" class="btn btn-secondary" (click)="cancelarRegistro()">Cancelar</button>
+        </form>
+        <div>
+            <button id="mostrarUsuarios" class="btn btn-success" (click)="mostrarListado()">Mostrar  Usuarios</button>
+        </div>
+    </div>
+
+

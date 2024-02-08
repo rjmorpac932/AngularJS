@@ -1,0 +1,30 @@
+#formularioUsuarios{
+    text-align: center;
+    margin: 15% 10% 0% 35%;
+    border-radius: 10px;
+    border: solid black 2px;
+    max-width: 400px;
+}
+
+#cambiarUsuario{
+    margin: 1%;
+}
+
+#usuario{
+    margin: 1%;
+}
+#email{
+    margin-left: 2%;
+}
+
+#spanEmail{
+    background-color: rgb(255, 199, 199);
+    color: red;
+    margin-left: 14%;
+}
+
+#spanUsuario{
+    background-color: rgb(255, 199, 199);
+    color: red;
+    margin-left: 14%;
+}

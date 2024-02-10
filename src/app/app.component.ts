@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { VideojuegosComponent } from './formularios/videojuegos/videojuegos.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, VideojuegosComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

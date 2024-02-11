@@ -15,12 +15,12 @@ import lombok.Data;
 @Service
 @Data
 public class Servicio {
-	
+
 	@Autowired
 	UsuarioRepository usuarioRepository;
-	
-	public List<Usuario> busquedaUsuarioGeneral(String nombreUsuario, String nombreCompleto){
-		return usuarioRepository.busquedaUsuarioGeneral(nombreUsuario, nombreCompleto);
+
+	public List<Usuario> busquedaUsuarioGeneral(){
+		return usuarioRepository.findAll();
 	}
 	
 	public Usuario busquedaUsuarioById(Long id) {
@@ -58,4 +58,10 @@ public class Servicio {
 		
 	}
 	
+	public Usuario crearUsuario(Usuario usuario) {
+		usuarioRepository.save(usuario);
+		return usuario;
+
+	}
+
 }

@@ -9,6 +9,11 @@
     <br>
     <button type="submit">Buscar</button>
     <button (click)="eliminarTodosLosUsuarios()">Eliminar Usuarios</button>
+    <div>
+        <button type="submit">Buscar</button>
+        <button type="button" (click)="cambiarFormularioVisible('crear')">Crear Usuario</button>
+    </div>
+
     <br>
 </form>
 
@@ -39,7 +44,7 @@
 
 <form [formGroup]="formularioModificarUsuario" (ngSubmit)="modificarUsuario()">
     <h1>Modificar Usuarios</h1>
-    <button (click)="cambiarFormularioVisible()">Volver</button>
+    <button (click)="cambiarFormularioVisible('buscar')">Volver</button>
     <br>
     <!-- Campo Nombre de Usuario -->
     <label for="nombreAlumno">Nombre Completo:</label>
@@ -54,7 +59,7 @@
         <input type="text" id="usuario" name="usuario" formControlName="usuario" [readOnly]="true">
 
         <!-- Botón para Generar Usuario -->
-        <button type="button" (click)="generarUsuario()">Generar Usuario</button>
+        <button type="button" (click)="generarUsuario(formularioModificarUsuario)">Generar Usuario</button>
     </div>
 
     <br>
@@ -67,7 +72,7 @@
         <br>
         <input type="date" formControlName="fechaNacimiento" name="fechaNacimiento" id="fechaNacimiento">
         @if (this.formularioModificarUsuario.get("fechaNacimiento")?.errors?.['dateMismatch']){
-            <span>(Debe introducir una fecha válida)</span>
+        <span>(Debe introducir una fecha válida)</span>
         }
     </div>
 
@@ -164,4 +169,138 @@
 
 </form>
 <br>
+
+<!-- FORMULARIO CREAR USUARIO -->
+
+} @else if (isFormularioCrearUsuarioVisible ) {
+
+
+<form [formGroup]="formularioCrearUsuario" (ngSubmit)="crearUsuario()">
+    <h1>Crear Usuario </h1>
+    <button (click)="cambiarFormularioVisible('buscar')">Volver</button>
+
+    <br>
+    <!-- Campo Nombre de Usuario -->
+    <label for="nombreAlumno">Nombre Completo:</label>
+    <input type="text" id="nombreCompleto" name="nombreCompleto" formControlName="nombreCompleto">
+
+    <br>
+
+    <!-- Campo Usuario -->
+    <div>
+        <label for="usuario">Usuario:</label>
+        <br>
+        <input type="text" id="usuario" name="usuario" formControlName="usuario" [readOnly]="true">
+
+        <!-- Botón para Generar Usuario -->
+        <button type="button" (click)="generarUsuario(formularioCrearUsuario)">Generar Usuario</button>
+    </div>
+
+    <br>
+
+    <!-- Campo de Fecha de Nacimiento -->
+
+    <div>
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <br>
+        <br>
+        <input type="date" formControlName="fechaNacimiento" name="fechaNacimiento" id="fechaNacimiento">
+        @if (this.formularioCrearUsuario.get("fechaNacimiento")?.errors?.['dateMismatch']){
+        <span>(Debe introducir una fecha válida)</span>
+        }
+    </div>
+
+    <br>
+
+    <!-- Campo de Email -->
+    <div>
+        <label for="email">Correo Electrónico:</label>
+        <br>
+        <br>
+        <input type="email" id="email" name="email" formControlName="email">
+
+        @if (this.formularioCrearUsuario.get('email')?.errors?.['required']) {
+        <span>(El email es obligatorio)</span>
+        }@else if (this.formularioCrearUsuario.get("email")?.errors?.['emailMismatch']){
+        <span>(Debe introducir un email válido)</span>
+        }
+    </div>
+
+    <br>
+
+    <!-- Campo de Peso -->
+    <div>
+        <label for="peso">Peso:</label>
+        <br>
+        <br>
+        <input type="number" min="40" max="120" id="peso" name="peso" formControlName="peso">
+    </div>
+    <br>
+
+    <!-- Campo de Peso -->
+
+    <div>
+        <label for="altura">Altura:</label>
+        <br>
+        <br>
+        <input type="number" min="0.80" max="3" id="altura" name="altura" formControlName="altura">
+    </div>
+    <br>
+
+    <!-- Campo Contraseña -->
+    <div>
+
+        <label for="contrasena">Contraseña:</label>
+        <br>
+        <br>
+        <input type="password" id="contrasena" name="contrasena" formControlName="contrasena">
+
+        @if (this.formularioCrearUsuario.get('contrasena')?.errors?.['required']) {
+
+        <span>(La contraseña es obligatoria)</span>
+        } @else {
+        @if (this.formularioCrearUsuario.get('contrasena')?.errors?.['minlength']) {
+        <span>(La contraseña debe tener al menos 8 caracteres)</span>
+        } @else {
+        @if (this.formularioCrearUsuario.get('contrasena')?.errors?.['maxlength']) {
+        <span>(La contraseña debe tener máximo 12 caracteres)</span>
+        }
+        }
+        }
+    </div>
+    <br>
+
+    <!-- Campo Confirmar Contraseña -->
+    <div>
+        <label for="confirmarContrasena">Confirmar Contraseña:</label>
+        <br>
+        <br>
+        <input type="password" id="confirmarContrasena" name="confirmarContrasena"
+            formControlName="confirmarContrasena">
+
+        @if (this.formularioCrearUsuario.get('confirmarContrasena')?.errors?.['required']) {
+
+        <span>(La contraseña es obligatoria)</span>
+        } @else {
+        @if (this.formularioCrearUsuario.get('confirmarContrasena')?.errors?.['minlength']) {
+        <span>(La contraseña debe tener al menos 8 caracteres)</span>
+        } @else {
+        @if (this.formularioCrearUsuario.get('confirmarContrasena')?.errors?.['maxlength']) {
+        <span>(La contraseña debe tener máximo 12 caracteres)</span>
+        } @else {
+        @if(this.formularioCrearUsuario.errors?.['passwordMismatch']){
+        <span>(La contraseña debe coincidir)</span>
+        }
+        }
+        }
+        }
+    </div>
+
+    <br>
+
+    <!-- Botón de Enviar -->
+    <button type="submit">Crear</button>
+</form>
+
+
 }

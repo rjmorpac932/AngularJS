@@ -1,0 +1,782 @@
+<details class="wrapper">
+    <summary>
+        <span class="summary-title">6 - Consumo de Datos</span>
+        <div class="summary-chevron-up">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-chevron-down">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </summary>
+
+    <div class="summary-content">
+
+        <details>
+            <summary>
+                <span class="summary-title">6.1 Conexión a una API.</span>
+                <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
+
+            <div class="summary-content">
+
+                <details>
+                    <summary>
+                        <span class="summary-title">6.1.1 Uso de HttpClient.</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+
+                        <p>
+                            Una aplicación web puede dividirse en dos grandes bloques: Front-end y Back-end. El
+                            Front-end es la
+                            parte que se muestra a través del navegador web, o sea, la parte que se encarga de
+                            interactuar con el
+                            usuario para recoger datos e información. El Back-end, por su parte, se ejecuta en un
+                            servidor y recoge
+                            a través de una API de servicios toda esa información para gestionarla (guardarla en una
+                            base de datos,
+                            realizar comprobaciones, etc.).
+                        </p>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.1/5.1.1/1.png"
+                                alt="Ejemplo de conexión a un servidor mediante una API"
+                                title="Ejemplo de conexión a un servidor mediante una API">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            En la mayoría de casos, la comunicación entre aplicaciones Front-end y servicios Back-end se
+                            realiza
+                            mediante el protocolo HTTP. Para realizar este tipo de comunicación, las aplicaciones se
+                            apoyan en API
+                            como la interfaz XMLHttpRequest y la API fetch(), que son soportadas por la mayoría de
+                            navegadores web y
+                            permiten al Front-end realizar peticiones HTTP.
+                        </p>
+
+                        <p>
+                            Angular, por su parte, nos ofrece el servicio HttpClient. HttpClient es un servicio con
+                            métodos para
+                            realizar peticiones HTTP en aplicaciones Angular que proporciona una API simplificada,
+                            construida sobre
+                            la interfaz XMLHttpRequest, para realizar peticiones HTTP y procesar sus respuestas. En este
+                            sentido, el
+                            servicio ofrece toda una serie de métodos para realizar los distintos tipos de peticiones
+                            HTTP que
+                            existen:
+                        </p>
+
+                        <ul>
+                            <li>Get</li>
+                            <li>Post</li>
+                            <li>Put</li>
+                            <li>Delete</li>
+                            <li>Patch</li>
+                            <li>Head</li>
+                            <li>Jsonp</li>
+                        </ul>
+
+                        <p>
+                            El servicio también aporta otros beneficios muy interesantes como son el soporte a la
+                            realización de
+                            test, soporte a la intercepción de peticiones y respuesta, una mejor gestión de errores,
+                            etc.
+                        </p>
+
+                        <p>
+                            HttpClient forma parte del módulo HttpClientModule del paquete &commat;angular/ common/http
+                            que
+                            tendremos que
+                            incluir en nuestra aplicación Angular. Hay que tener en cuenta que HttpClient está
+                            disponible en Angular
+                            4.3.X y versiones posteriores. Para versiones anteriores existía un servicio parecido que se
+                            llamaba
+                            simplemente HTTP.
+                        </p>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.1/5.1.1/2.png" alt="Import de HttpClient"
+                                title="Import de HttpClient">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            A la hora de hacer estas peticiones, tenemos 4 principales métodos ya mencionados
+                            anteriormente:
+                        </p>
+
+                        <ul>
+                            <li>GET: Para obtener datos de la BD (Base de Datos)</li>
+                            <li>POST: Para introducir datos en la BD</li>
+                            <li>PUT: Para editar datos ya existentes de la BD</li>
+                            <li>DELETE: Para eliminar datos de la BD.</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+                </details>
+
+                <details>
+
+                    <summary>
+                        <span class="summary-title">6.1.2 - Actualización de datos.</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+
+                        <ol>
+                            <li>
+                                Antes de comenzar con el manejo de las peticiones Http, creamos un proyecto junto con la
+                                creación de su componente.
+                            </li>
+
+                            <br>
+
+                            <app-clipboard contenido="{{ cCreacionComponenteHttp }}"></app-clipboard>
+
+                            <li>
+                                Importamos en la clase “form.component.ts”, HttpClient y HttpClientModule.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module5/5.1/5.1.2/1.png" alt="Importacion de HttpClient"
+                                    title="Importacion de HttpClient">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                Al ser el componente un formulario, creamos un FormGroup con los FormControl, que van a
+                                ser los campos que va a tener en base de datos
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module5/5.1/5.1.2/2.png" alt="Importacion de FormGroup"
+                                    title="Importacion de FormGroup">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                Hacemos un constructor para inicializar el HttpClient.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module5/5.1/5.1.2/2.png" alt="Constructor de HttpClient"
+                                    title="Constructor de HttpClient">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                Posteriormente, antes de comenzar a crear las peticiones Http tendremos que tener un
+                                servicio y un controlador previamente creado, en nuestro caso en SpringBoot.
+                            </li>
+
+                        </ol>
+
+
+                        <h2>Servicio</h2>
+
+                        <app-clipboard contenido="{{ cCreacionServicioApi }}"></app-clipboard>
+                        <br>
+
+                        <h2>Controlador</h2>
+
+                        <app-clipboard contenido="{{ cCreacionControladorApi }}"></app-clipboard>
+                        <br>
+
+                        <h2>GET</h2>
+
+                        <ol>
+                            <li>
+                                Creamos una función dentro del archivo “form.component.ts”, y dentro de la clase
+                                “FormComponent”, en la cual llamamos a Http, y al método que queramos invocar, en este
+                                caso es un Get. Dentro del “Get”, incluimos la url sobre la que vamos a hacer , y dentro
+                                del “subscribe”, incluímos la respuesta que queremos que nos devuelva.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module5/5.1/5.1.2/4.png" alt="PASO 1 PETICION GET"
+                                    title="PASO 1 PETICION GET">
+                            </div>
+
+                            <li>
+                                En “form.component.html”, creamos un botón y mediante el evento “click”, llamamos a la
+                                función.
+                            </li>
+
+                            <br>
+
+                            <app-clipboard contenido="{{ cMostrarCiudades }}"></app-clipboard>
+
+                        </ol>
+
+                        <h2>POST</h2>
+
+                        <ol>
+
+                            <li>
+                                Creamos una función dentro del archivo “form.component.ts”, y dentro de la clase
+                                “FormComponent”, en la cual llamamos a Http, y al método que queramos invocar, en este
+                                caso es un Post. Dentro del “Post”, incluimos la url sobre la que vamos a hacer, y
+                                además, los datos que en este caso son los que vamos a pasar en el formulario,
+                                recogiendolos como un RequestBody , y dentro del “subscribe”, incluímos la respuesta que
+                                queremos que nos devuelva.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module5/5.1/5.1.2/5.png" alt="PASO 1 PETICION POST"
+                                    title="PASO 1 PETICION POST">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                En “form.component.html”, creamos un botón y mediante el evento “click”, llamamos a la
+                                función.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module5/5.1/5.1.2/6.png" alt="PASO 2 PETICION POST"
+                                    title="PASO 2 PETICION POST">
+                            </div>
+
+                        </ol>
+
+                        <h2>PUT</h2>
+
+                        <ol>
+                            <li>
+                                Creamos una función dentro del archivo “form.component.ts”, y dentro de la clase
+                                “FormComponent”, en la cual llamamos a Http, y al método que queramos invocar, en este
+                                caso es un Put. Dentro del “Put”, incluimos la url sobre la que vamos a hacer, y además,
+                                los datos que en este caso son los que vamos a pasar en el formulario, recogiendolos
+                                como un RequestBody , y dentro del “subscribe”, incluímos la respuesta que queremos que
+                                nos devuelva.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module5/5.1/5.1.2/7.png" alt="PASO 1 PETICION PUT"
+                                    title="PASO 1 PETICION PUT">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                En “form.component.html”, creamos un botón y mediante el evento “click”, llamamos a la
+                                función.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module5/5.1/5.1.2/8.png" alt="PASO 2 PETICION PUT"
+                                    title="PASO 2 PETICION PUT">
+                            </div>
+
+                        </ol>
+
+                        <h2>DELETE</h2>
+
+                        <ol>
+                            <li>
+                                Creamos una función dentro del archivo “form.component.ts”, y dentro de la clase
+                                “FormComponent”, en la cual llamamos a Http, y al método que queramos invocar, en este
+                                caso es un Delete. Dentro del “Delete”, incluimos la url sobre la que vamos a hacer, y
+                                además, los datos que en este caso son los que vamos a pasar en el formulario,
+                                recogiendolos como un PathParam, incluyendo estos datos dentro de la url y no como en
+                                los casos anteriores, y dentro del “subscribe”, incluímos la respuesta que queremos que
+                                nos devuelva.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module5/5.1/5.1.2/9.png" alt="PASO 1 PETICION DELETE"
+                                    title="PASO 1 PETICION DELETE">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                En “form.component.html”, creamos un botón y mediante el evento “click”, llamamos a la
+                                función.
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module5/5.1/5.1.2/10.png" alt="PASO 2 PETICION DELETE"
+                                    title="PASO 2 PETICION DELETE">
+                            </div>
+                        </ol>
+
+                    </div>
+
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+                </details>
+
+            </div>
+
+
+            <div class="summary-chevron-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-up">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
+        </details>
+
+
+        <details>
+
+            <summary>
+                <span class="summary-title">6.2 - Integración de datos en componentes</span>
+                <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
+
+            <div class="summary-content">
+
+                <p>
+                    La integración de datos en componentes significa combinar y utilizar datos dentro de diferentes
+                    partes de tu aplicación/proyecto de Angular JS. Esto se consigue mediante controladores que ayudan a
+                    organizar y gestionar cómo se presentan los datos. Además, Angular utiliza un enfoque de vinculación
+                    de datos bidireccional, por lo tanto cuando los datos cambian en el controlador, la interfaz de
+                    usuario se actualiza automáticamente, y viceversa.
+                </p>
+
+                <details>
+
+                    <summary>
+                        <span class="summary-title">6.2.1 - Mostrar datos en plantilla.</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+
+                        <p>
+                            En las plantillas de AngularJS, para mostrar los datos en plantilla se utiliza la sintaxis
+                            de doble llave para mostrar los datos. Por ejemplo, si tienes un objeto usuario con una
+                            propiedad nombre, puedes mostrarlo en la plantilla de la siguiente manera:
+                        </p>
+
+                        <br>
+
+                        <app-clipboard contenido="{{ cUsuarioNombre }}"></app-clipboard>
+
+                        <br>
+
+                        <p>
+                            Además, los filtros en AngularJS se utilizan para formatear y transformar datos antes de
+                            mostrarlos en la plantilla. Por ejemplo, puedes usar el filtro date para formatear una fecha
+                            antes de mostrarla:
+                        </p>
+
+                        <br>
+
+                        <app-clipboard contenido="{{ cFechaDate }}"></app-clipboard>
+
+                        <br>
+
+                        <p>
+                            Por aquí podemos ver un ejemplo de mostrar datos en plantilla, en este caso en una tabla,
+                            como se aprecia generamos una tabla, en la que se utiliza un &commat;if y un bucle
+                            &commat;for mediante el
+                            cual mostramos nombre, apellido1, apellido2, y username de cada usuario de
+                            usuariosEncontrados. Además, podemos ver cómo se utiliza la sintaxis de doble llave
+                            mencionada anteriormente.
+                        </p>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.2/5.2.1/1.png" alt="Mostrar datos en pantalla"
+                                title="Mostrar datos en pantalla">
+                        </div>
+
+                    </div>
+
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+
+                </details>
+
+                <details>
+
+                    <summary>
+                        <span class="summary-title">6.2.2 - Actualización de datos.</span>
+                        <div class="summary-chevron-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="summary-content">
+
+                        <p>
+                            En este apartado, exploraremos un aspecto fundamental en el desarrollo de aplicaciones web
+                            modernas:
+                            la actualización dinámica de datos en la interfaz de usuario. Mantener la interfaz de
+                            usuario
+                            sincronizada con el estado actual de la aplicación es esencial para proporcionar una
+                            experiencia
+                            fluida y receptiva a los usuarios. En particular, nos enfocaremos en cómo Angular, junto con
+                            una
+                            base de datos y la realización de solicitudes al servidor, facilita este proceso de
+                            actualización de
+                            datos en tiempo real.
+                        </p>
+
+                        <p>
+                            El ejemplo consistirá en una tabla con varias columnas con información sobre animales y sus
+                            características, cada fila tendrá su correspondiente botón para modificar, nos llevará a un
+                            pequeño
+                            formulario para editar los atributos, y veremos en este proceso cómo se actualizarán los
+                            datos
+                            localmente como, tras hacer click en el botón aceptar, se actualizarán también en la base de
+                            datos a
+                            través del servidor gracias a la petición de actualizar que haremos.
+                        </p>
+
+                        <p>
+                            Utilizaremos también Spring boot para que los controladores nos ayuden a obtener los datos
+                            de la
+                            base de datos y actualizarlos.
+                        </p>
+
+                        <ul>
+                            <li>
+                                Tabla que utilizaremos para este ejemplo:
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module5/5.2/5.2.2/1.png" alt="BBDD Ejemplo"
+                                    title="BBDD Ejemplo">
+                            </div>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module5/5.2/5.2.2/2.png" alt="BBDD Ejemplo"
+                                    title="BBDD Ejemplo">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                Controladores de obtener y actualizar los datos:
+                            </li>
+
+                            <br>
+
+                            <div class="modulo-img-container">
+                                <img src="assets/module_images/module5/5.2/5.2.2/3.png" alt="Controlador Ejemplo"
+                                    title="Controlador Ejemplo">
+                            </div>
+
+                            <br>
+
+                            <li>
+                                Métodos del servicio utilizando el repositorio para la obtención y actualizado de datos:
+                            </li>
+                        </ul>
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.2/5.2.2/4.png" alt="Servicio Ejemplo"
+                                title="Servicio Ejemplo">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            Ahora veremos la parte de angular, para ello, crearemos un nuevo proyecto y añadiremos un
+                            componente, en el que importaremos: FormBuilder, FormGroup, ReactiveFormsModule (importante
+                            importar ReactiveFormsModule dentro del import del &commat;Component). Una vez que ya
+                            tenemos
+                            configurado el componente, empezaremos con la vista del componente (html):
+                        </p>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.2/5.2.2/5.png" alt="Ejemplo de Uso"
+                                title="Ejemplo de Uso">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            Al entrar en la página nos encontraremos con un botón: “Obtener animales”, a parte de un
+                            contenedor con un id donde introduciremos la tabla que vemos. Al darle click al botón,
+                            haremos
+                            una solicitud get y se creará la tabla:
+                        </p>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.2/5.2.2/6.png"
+                                alt="Ejemplo de generacion de tabla con datos de la BBDD"
+                                title="Ejemplo de generacion de tabla con datos de la BBDD">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            A continuación el código de la petición get y la creación de la tabla:
+                        </p>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.2/5.2.2/7.png" alt="Ejemplo de Peticion Get"
+                                title="Ejemplo de Peticion Get">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            Podemos observar que en la función de la búsqueda de animales utilizamos un fetch + url que
+                            hará la
+                            petición get para luego convertir la respuesta en Json.
+                        </p>
+
+                        <p>
+                            Esos datos los obtendrá el método de la creación de la tabla para procesarlos y recorrer
+                            cada animal
+                            que haya para ir introduciendo sus atributos en una tabla que posteriormente haremos el
+                            indicado
+                            InnerHtml a su contenedor con id tablaAnimales.
+                        </p>
+
+                        <p>
+                            Para el correcto manejo de los datos y funcionalidad de modificación de los atributos de el
+                            animal
+                            en concreto, habrá que utilizar su id, por eso hemos creado en la propia fila de ese animal,
+                            el
+                            botón modificar con un atributo ‘data’ que contendrá el id.
+                        </p>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.2/5.2.2/8.png" alt="Ejemplo de Peticion Get 2"
+                                title="Ejemplo de Peticion Get 2">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            Podemos ver el manejador de evento que solo actuará con los botones con atributo class:
+                            btn-modificar. Lo que hará es que por cada botón, al hacer click a uno en concreto, obtendrá
+                            el id
+                            guardado en el atributo data-id y lo enviará a la función con la que rellenaremos el
+                            formulario con
+                            los datos de ese animal y al controlador id del grupo de formulario siguiente:
+                        </p>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.2/5.2.2/9.png" alt="Formulario de Peticion Get"
+                                title="Formulario de Peticion Get">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            En este momento, es cuando ya el formGroup empieza a actualizarse constantemente mientras
+                            esté el
+                            siguiente formulario, ya que se está guardando todo el rato los valores de los inputs:
+                        </p>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.2/5.2.2/10.png" alt="Formulario de Peticion Get 2"
+                                title="Formulario de Peticion Get 2">
+                        </div>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.2/5.2.2/11.png"
+                                alt="Formulario de Peticion Get Codigo" title="Formulario de Peticion Get Codigo">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            Podemos ver el formulario en el que le indicamos que al hacer click al botón modificar,
+                            activará la
+                            función modificar animal. A parte podemos ver que le hemos vinculado el grupo de formulario
+                            visto
+                            anteriormente, para poder guardar los valores que introduzcamos en los inputs en los
+                            controladores
+                            del formGroup, gracias al atributo ‘formControlName’.
+                        </p>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.2/5.2.2/12.png"
+                                alt="Formulario de Peticion Get Codigo 3" title="Formulario de Peticion Get Codigo 3">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            Podemos ver que la función de rellenar el formulario realiza una llamada a la función de
+                            obtener el
+                            animal a través del id obtenido del botón modificar de la tabla, con la respuesta que
+                            obtengamos,
+                            iremos guardando en cada controlador del grupo de formulario, haciendo una actualización
+                            inmediata
+                            con esos datos.
+                        </p>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.2/5.2.2/13.png"
+                                alt="Formulario de Peticion Get Codigo 4" title="Formulario de Peticion Get Codigo 4">
+                        </div>
+
+                        <br>
+
+                        <p>
+                            Para ir finalizando, una vez hayamos modificado el formulario con los nuevos datos (para
+                            este
+                            ejemplo no habrán validaciones), una vez que le demos al botón de modificar, crearemos un
+                            objeto
+                            llamado datosActualizados, que obtendremos esos valores actualizados de los inputs del
+                            formulario, a
+                            través de los controladores del formGroup, para finalmente, introducirlo en el body
+                            convirtiéndolo
+                            en string,en la petición put que hacemos gracias al fetch que vemos en la imagen, donde le
+                            pasamos
+                            la url definida al principio, indicando un manejo de alert o errores en caso de que la
+                            respuesta de
+                            esa petición haya sido exitosa o fallida:
+                        </p>
+
+                        <br>
+
+                        <div class="modulo-img-container">
+                            <img src="assets/module_images/module5/5.2/5.2.2/13.png" alt="Formulario Animal Actualizado"
+                                title="Formulario Animal Actualizado">
+                        </div>
+
+                    </div>
+
+                    <div class="summary-chevron-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-up">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                    </div>
+
+                </details>
+
+            </div>
+
+
+            <div class="summary-chevron-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-up">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
+
+        </details>
+
+    </div>
+
+    <div class="summary-chevron-down">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-chevron-up">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </div>
+
+
+</details>

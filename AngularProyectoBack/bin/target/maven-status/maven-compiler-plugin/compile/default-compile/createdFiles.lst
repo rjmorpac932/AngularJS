@@ -1,0 +1,5 @@
+com\daw\ApplicationLauncher.class
+com\daw\model\Usuario.class
+com\daw\repository\UsuarioRepository.class
+com\daw\service\Servicio.class
+com\daw\controller\ApplicationController.class

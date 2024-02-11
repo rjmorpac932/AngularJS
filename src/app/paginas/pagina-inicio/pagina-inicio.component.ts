@@ -7,11 +7,12 @@ import { ModuloTresComponent } from '../../modulos/modulo-tres/modulo-tres.compo
 import { ModuloCuatroComponent } from '../../modulos/modulo-cuatro/modulo-cuatro.component';
 import { ModuloEventosComponent } from '../../modulos/modulo-eventos/modulo-eventos.component';
 import { ModuloSeisComponent } from '../../modulos/modulo-seis/modulo-seis.component';
+import { ModuloCincoComponent } from '../../modulos/modulo-cinco/modulo-cinco.component';
 
 @Component({
   selector: 'app-pagina-inicio',
   standalone: true,
-  imports: [AngularAnimationComponent, BtnPillComponent, ModuloUnoComponent, ModuloDosComponent, ModuloTresComponent, ModuloCuatroComponent, ModuloEventosComponent, ModuloCuatroComponent, ModuloSeisComponent],
+  imports: [AngularAnimationComponent, BtnPillComponent, ModuloUnoComponent, ModuloDosComponent, ModuloTresComponent, ModuloCuatroComponent, ModuloEventosComponent, ModuloCuatroComponent, ModuloSeisComponent, ModuloCincoComponent],
   templateUrl: './pagina-inicio.component.html',
   styleUrl: './pagina-inicio.component.css',
 })

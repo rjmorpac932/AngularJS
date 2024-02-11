@@ -19,8 +19,8 @@ public class Servicio {
 	@Autowired
 	UsuarioRepository usuarioRepository;
 
-	public List<Usuario> busquedaUsuarioGeneral(){
-		return usuarioRepository.findAll();
+	public List<Usuario> busquedaUsuarioGeneral(String nombreUsuario, String nombreCompleto){
+		return usuarioRepository.busquedaUsuarioGeneral(nombreUsuario, nombreCompleto);
 	}
 	
 	public Usuario busquedaUsuarioById(Long id) {
@@ -43,10 +43,7 @@ public class Servicio {
         } else {
         	return null;
         }
-        
-        
-        
-        
+
     }
 	
 	public void eliminarUsuarios() {
@@ -83,7 +80,6 @@ public class Servicio {
 	public Usuario crearUsuario(Usuario usuario) {
 		usuarioRepository.save(usuario);
 		return usuario;
-
 	}
 
 }

@@ -261,8 +261,9 @@ export class FormularioUsuariosComponent implements OnInit {
           if (datePatron.test(this.formularioModificarUsuario.get("fechaNacimiento")?.value)) {
             if (this.idUsuarioModificado) {
               await this.actualizarUsuario(this.idUsuarioModificado);
-              alert("Usuario modificado con éxito.")
-              window.location.href = 'http://localhost:4200/formularios';
+              alert("Usuario modificado con éxito.");
+              this.formularioModificarUsuario.reset();
+              this.isFormularioBusquedaVisible = true;
             } else {
               alert("ID no encontrado");
             }
@@ -321,7 +322,6 @@ export class FormularioUsuariosComponent implements OnInit {
       altura: this.formularioCrearUsuario.get('altura')?.value
     };
 
-    console.log(datosUsuario);
     if (this.formularioCrearUsuario.get('contrasena')?.value !== this.formularioCrearUsuario.get('confirmarContrasena')?.value) {
       alert('Las contraseñas no coinciden');
     } else {
@@ -343,6 +343,9 @@ export class FormularioUsuariosComponent implements OnInit {
                 throw new Error('Error al crear usuario');
               }
               alert('Usuario creado exitosamente');
+              this.formularioCrearUsuario.reset();
+              this.isFormularioCrearUsuarioVisible = false;
+              this.isFormularioBusquedaVisible = true;
             });
 
 

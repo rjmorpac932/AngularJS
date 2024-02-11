@@ -3,7 +3,6 @@ package com.daw.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,9 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.daw.dto.UsuarioDTO;
 import com.daw.model.Usuario;
 import com.daw.service.Servicio;
 
@@ -44,11 +43,12 @@ public class ApplicationController {
 		servicio.eliminarUsuarios();
 	}
 	
+	/*
 	@PostMapping("/usuarios")
 	public ResponseEntity<Usuario> crearUsuario(@RequestBody UsuarioDTO usuarioDTO){
 		return ResponseEntity.ok().body(servicio.crearUsuario(usuarioDTO));
 	}
-	
+	*/
 	@DeleteMapping("/usuarios/{id}")
 	public ResponseEntity<Usuario> eliminacionUsuarioEspecifico(@PathVariable("id") Long idUsuario){
 		return ResponseEntity.ok().body(servicio.eliminacionUsuarioEspecifico(idUsuario));
@@ -60,9 +60,9 @@ public class ApplicationController {
 		return servicio.crearUsuario(usuario);
 	}
 
-
 	@PutMapping("/actualizarUsuario/{id}")
 	public ResponseEntity<Usuario> modificarUsuario(@PathVariable("id") Long id, @RequestBody Usuario usuarioActualizado){
 		return ResponseEntity.ok().body(servicio.modificarUsuario(id, usuarioActualizado));
 	}
+	
 }

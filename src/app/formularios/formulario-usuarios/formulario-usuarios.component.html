@@ -7,13 +7,11 @@
     <label for="usuario">Usuario</label>
     <input type="text" name="usuario" id="usuario" placeholder="Usuario..." formControlName="usuario">
     <br>
-    <button type="submit">Buscar</button>
-    <button (click)="eliminarTodosLosUsuarios()">Eliminar Usuarios</button>
     <div>
-        <button type="submit">Buscar</button>
-        <button type="button" (click)="cambiarFormularioVisible('crear')">Crear Usuario</button>
+        <button type="submit" style="margin-right: 10px;">Buscar</button>
+        <button type="button" (click)="cambiarFormularioVisible('crear')" style="margin-right: 10px;">Crear Usuario</button>
+        <button (click)="eliminarTodosLosUsuarios()">Eliminar Usuarios</button>
     </div>
-
     <br>
 </form>
 

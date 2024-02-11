@@ -15,7 +15,6 @@ import { response } from 'express';
 })
 
 export class FormularioUsuariosComponent implements OnInit {
-
   // FONT AWESOME ICONS
 
   ngOnInit(): void {
@@ -190,7 +189,10 @@ export class FormularioUsuariosComponent implements OnInit {
     this.formularioModificarUsuario.get('altura')?.setValue(altura);
     this.formularioModificarUsuario.get('contrasena')?.setValue(password);
     this.formularioModificarUsuario.get('confirmarContrasena')?.setValue(password);
+    this.idUsuarioModificado = id;
   }
+  idUsuarioModificado?: string | number;
+
 
   /*******************/
 
@@ -223,7 +225,30 @@ export class FormularioUsuariosComponent implements OnInit {
     }
   }
 
-  modificarUsuario() {
+  async actualizarUsuario(id: String | number) {
+    const URL = `http://localhost:9999/formularios/actualizarUsuario/${id}`;
+    const usuarioModificado = {
+      nombreCompleto: this.formularioModificarUsuario.get('nombreCompleto')?.value,
+      nombreUsuario: this.formularioModificarUsuario.get('usuario')?.value,
+      email: this.formularioModificarUsuario.get('email')?.value,
+      password: this.formularioModificarUsuario.get('contrasena')?.value,
+      fechaNacimiento: this.formularioModificarUsuario.get('fechaNacimiento')?.value,
+      peso: this.formularioModificarUsuario.get('peso')?.value,
+      altura: this.formularioModificarUsuario.get('altura')?.value
+    }
+    const configuracion = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Acces-Control-Allow-Origin': '*'
+      },
+      body: JSON.stringify(usuarioModificado)
+    }
+    const respuesta = await fetch(URL, configuracion).then(respuesta => respuesta.json());
+    return respuesta;
+  }
+
+  async modificarUsuario() {
 
     const emailPatron = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const datePatron = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
@@ -234,7 +259,13 @@ export class FormularioUsuariosComponent implements OnInit {
       if (this.formularioModificarUsuario.get('usuario')?.value !== "") {
         if (emailPatron.test(this.formularioModificarUsuario.get("email")?.value)) {
           if (datePatron.test(this.formularioModificarUsuario.get("fechaNacimiento")?.value)) {
-            //AQUI SE PONE LA FUNCIÓN (YA QUE HA PASADO TODAS LAS VALIDACIONES)
+            if (this.idUsuarioModificado) {
+              await this.actualizarUsuario(this.idUsuarioModificado);
+              alert("Usuario modificado con éxito.")
+              window.location.href = 'http://localhost:4200/formularios';
+            } else {
+              alert("ID no encontrado");
+            }
           } else {
             alert("Debe introducir una fecha válida");
           }

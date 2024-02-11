@@ -78,3 +78,44 @@ button:active {
 #tablaUsuarios th{
   font-size: 1.3rem;
 }
+
+#nav-formulario-jmc{
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#nav-formulario-jmc ul{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-size: 20px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  list-style: none;
+}
+
+#nav-formulario-jmc ul li{
+  margin-right: 20px;
+}
+
+#nav-formulario-jmc ul li.selected{
+  color: red;
+  font-size: 24px;
+}
+
+#nav-formulario-jmc ul li:hover{
+  cursor: pointer;
+}
+
+#partidasGanadasJ1{
+  font-size: 24px;
+}
+
+#partidasGanadasJ2{
+  font-size: 24px;
+}

@@ -48,9 +48,6 @@ Para poder arrancar el servidor desde nuestra máquina, seguiremos los siguiente
 
 Cada práctica individual se podrá descargar en una rama aparte "practica-individual-x" y se podrán probar montándolas.
 
-***Se podrá acceder a la práctica individual de Juan Martín Candela montando el proyecto principal (main) y escribiendo
-la siguiente ruta: http://localhost:4200/practicasIndividuales***
-
 ## Reuniones del grupo
 
 ### Reunión 1 : 

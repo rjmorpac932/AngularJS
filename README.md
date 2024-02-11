@@ -39,9 +39,17 @@ Para poder arrancar el servidor desde nuestra máquina, seguiremos los siguiente
 
 1. Importar todo el proyecto desde la página de Github.
 2. Iniciar una terminal y desplazarnos hasta la carpeta que contiene el proyecto: `cd .../Manual_Angular`.
-3. Ejecutar el siguiente comando: `ng serve`.
-4. Buscar desde nuestro navegador la ruta en la que se ha abierto el servidor, normalmente es la siguiente: "http://localhost:4200/".
-5. ¡Disfruta explorando nuestro manual de Angular!
+3. Ejecutar el comando npm install para instalar y actualizar las dependencias del proyecto.
+4. Ejecutar el siguiente comando: `ng serve`.
+5. Buscar desde nuestro navegador la ruta en la que se ha abierto el servidor, normalmente es la siguiente: "http://localhost:4200/".
+6. ¡Disfruta explorando nuestro manual de Angular!
+
+## ¿Cómo acceder a las prácticas individuales?
+
+Cada práctica individual se podrá descargar en una rama aparte "practica-individual-x" y se podrán probar montándolas.
+
+***Se podrá acceder a la práctica individual de Juan Martín Candela montando el proyecto principal (main) y escribiendo
+la siguiente ruta: http://localhost:4200/practicasIndividuales***
 
 ## Reuniones del grupo
 

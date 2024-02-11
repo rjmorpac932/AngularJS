@@ -89,6 +89,18 @@ export class FormularioUsuariosComponent implements OnInit {
     return respuesta;
   }
 
+  async eliminacionUsuarioEspecifico(id: number | string){
+    const URL = `http://localhost:9999/formularios/usuarios/${id}`;
+    const opciones = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type' : 'application/json',
+      },
+    };
+    const respuesta = await fetch(URL, opciones).then(respuesta => alert("Usuario eliminado correctamente"));
+    return respuesta;
+  }
+
   async crearTablaBusquedaUsuario() {
 
     const datosUsuarios = await this.busquedaUsuarioGeneral() as UsuarioDTO[];
@@ -123,6 +135,15 @@ export class FormularioUsuariosComponent implements OnInit {
       columnaBorrado.classList.add("eliminarBtn");
       columnaBorrado.appendChild(iconoBorrar);
       columnaBorrado.setAttribute("data-usuario-id", id as string);
+      
+
+      columnaBorrado.addEventListener("click", () => {
+        const confirmar = confirm("¿Desea seguir eliminando el usuario?");
+        if(confirmar){
+          fila.parentElement?.removeChild(fila);
+          this.eliminacionUsuarioEspecifico(id);
+        }
+      });
       fila.appendChild(columnaBorrado);
 
       tablaUsuarioBody.appendChild(fila);
@@ -130,6 +151,8 @@ export class FormularioUsuariosComponent implements OnInit {
     });
     dom.watch();
   }
+
+
 
   async rellenarFormularioModificar(idUsuario: string | number) {
 

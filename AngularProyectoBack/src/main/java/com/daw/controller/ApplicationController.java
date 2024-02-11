@@ -45,4 +45,11 @@ public class ApplicationController {
 	public ResponseEntity<Usuario> crearUsuario(@RequestBody UsuarioDTO usuarioDTO){
 		return ResponseEntity.ok().body(servicio.crearUsuario(usuarioDTO));
 	}
+	
+	@DeleteMapping("/usuarios/{id}")
+	public ResponseEntity<Usuario> eliminacionUsuarioEspecifico(@PathVariable("id") Long idUsuario){
+		return ResponseEntity.ok().body(servicio.eliminacionUsuarioEspecifico(idUsuario));
+	}
+	
+	
 }

@@ -1,6 +1,7 @@
 package com.daw.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,4 +45,17 @@ public class Servicio {
         usuarioRepository.save(usuario);
         return usuario;
     }
+	
+	public Usuario eliminacionUsuarioEspecifico(Long idUsuario) {
+		Optional<Usuario> usuario = usuarioRepository.findById(idUsuario);
+		if(usuario.isPresent()) {
+			Usuario u = usuario.get();
+			usuarioRepository.delete(u);
+			return null;
+		}else {
+			return null;
+		}
+		
+	}
+	
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.daw.model.Usuario;
 
@@ -13,5 +14,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 			+ " WHERE ( u.nombreUsuario LIKE %:usuario% ) "
 			+ " AND ( u.nombreCompleto LIKE %:nombreCompleto% ) ")
 	public List<Usuario> busquedaUsuarioGeneral(String usuario, String nombreCompleto);
+	
 	
 }

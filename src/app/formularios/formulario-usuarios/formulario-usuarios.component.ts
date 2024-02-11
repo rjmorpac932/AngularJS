@@ -205,4 +205,27 @@ export class FormularioUsuariosComponent implements OnInit {
 
   }
 
+  // FUNCIÓN ELIMINAR TODO (JºMaría)
+
+  async eliminarTodosLosUsuarios() {
+    const confirmacion = window.confirm("¿Seguro que deseas eliminar todos los usuarios?");
+    if(confirmacion) {
+      const URL = `http://localhost:9999/formularios/usuarios`;
+      const configuracion = {
+        method: "DELETE",
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+      }
+      const respuesta = await fetch(URL, configuracion);
+      
+      if(respuesta.ok) {
+        return alert("Usuarios eliminados correctamente");
+      }
+      
+    } else {
+      return null;
+    }
+  }
 }

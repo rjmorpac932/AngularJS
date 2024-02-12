@@ -1,0 +1,79 @@
+<h1>LENGUAJES Y FRAMEWORKS MÁS UTILIZADOS</h1>
+<br>
+<div class="row">
+  <section class="col-sm-6">
+    <h3>FrontEnd</h3>
+    <ul>
+      <li>JavaScript</li>
+      <li>Angular</li>
+      <li>React</li>
+      <li>Vue.js</li>
+    </ul>
+  </section>
+  <section class="col-sm-6">
+    <h3>BackEnd</h3>
+    <ul>
+      <li>Java SE</li>
+      <li>PHP</li>
+      <li>Python</li>
+      <li>Node.js</li>
+    </ul>
+  </section>
+</div>
+<hr>
+<form [formGroup]="formularioBusquedaLenguajes">
+  <h5>Búsqueda de lenguajes/frameworks:</h5>
+  <br>
+  <div class="container">
+    <label for="nombreLenguaje">Nombre:</label>
+    <input type="text" class="form-control" placeholder="Introduza nombre del lenguaje" aria-label="nombre" id="nombre"
+      name="nombre" formControlName="nombre">
+  </div>
+  <br>
+  <button type="submit" (click)="crearTablaBusquedaLenguajes()" class="btn btn-primary">Buscar</button>
+  <button type="submit" (click)="borrarDatos()" class="btn btn-danger">Borrar Datos</button>
+</form>
+<br><br>
+<table class="table" id="tablaLenguaje">
+  <thead>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<br><br>
+<br>
+@if (mostrarFormularioLenguaje) {
+<form [formGroup]="formularioModificarLenguaje" id="formularioEdicion" (ngSubmit)="modificarUsuario()">
+  <div class="container ">
+    <label for="nombre">Nombre:</label>
+    <input type="text" class="form-control" aria-label="nombre" id="nombre" name="nombre" formControlName="nombre"
+      readonly>
+  </div>
+  <br>
+  <div class="container ">
+    <label for="ultimaVersion">Última versión:</label>
+    <input type="text" class="form-control" aria-label="ultimaVersion" id="ultimaVersion" name="ultimaVersion"
+      formControlName="ultimaVersion">
+  </div>
+  <br>
+  <div class="container ">
+    <label for="fechaLanzamiento">Fecha lanzamiento:</label>
+    <input type="text" class="form-control" aria-label="fechaLanzamiento" id="fechaLanzamiento" name="fechaLanzamiento"
+      formControlName="fechaLanzamiento" readonly>
+  </div>
+  <br>
+  <div class="container ">
+    <label for="tipoLenguaje">Tipo:</label>
+    <input type="text" class="form-control" aria-label="tipoLenguaje" id="tipoLenguaje" name="tipoLenguaje"
+      formControlName="tipoLenguaje">
+  </div>
+  <br>
+  <div class="container ">
+    <label for="descripcion">Descripción:</label>
+    <textarea type="text" class="form-control" aria-label="descripcion" id="descripcion" name="descripcion"
+      formControlName="descripcion">
+    </textarea>
+  </div>
+</form>
+}
+<router-outlet></router-outlet>

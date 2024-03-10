@@ -48,6 +48,10 @@ Para poder arrancar el servidor desde nuestra máquina, seguiremos los siguiente
 
 Cada práctica individual se podrá descargar en una rama aparte "practica-individual-x" y se podrán probar montándolas.
 
+## ¿Cómo a los archivos PDF de la documentación?
+
+Para acceder a estos archivos, podrás descargarlos desde la página principal del proyecto o encontrarlos dentro de la carpeta src/assets/downloads del proyecto.
+
 ## Reuniones del grupo
 
 ### Reunión 1 : 
@@ -75,6 +79,18 @@ El reparto de tareas es el siguiente:
 * Álvaro Sánchez Moreno: Crear una presentación canvas de los tres módulos del proyecto junto a David Dorante Lucas.
 
 * David Dorante Lucas: Crear una presentación canvas de los tres módulos del proyecto junto a Álvaro Sánchez Moreno.
+
+### Reunión 2 : 
+
+* Fecha Inicio: 08/03/2024 - 11:00.
+
+* Fecha Fin: 08/03/2024 - 12:00.
+
+* Duración: 1 hora.
+
+* Participantes: Juan Martín Candela,Jose María Mañero Brenes, Alvaro Sánchez Moreno, David Dorante Lucas.
+
+* Temas tratados: Reparto de partes de la presentación, aclaración de dudas.
 
 ## Integrantes del Proyecto
 

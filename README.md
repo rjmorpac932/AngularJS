@@ -48,7 +48,7 @@ Para poder arrancar el servidor desde nuestra máquina, seguiremos los siguiente
 
 Cada práctica individual se podrá descargar en una rama aparte "practica-individual-x" y se podrán probar montándolas.
 
-## ¿Cómo a los archivos PDF de la documentación?
+## ¿Cómo acceder a los archivos PDF de la documentación?
 
 Para acceder a estos archivos, podrás descargarlos desde la página principal del proyecto o encontrarlos dentro de la carpeta src/assets/downloads del proyecto.
 

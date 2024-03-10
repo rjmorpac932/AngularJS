@@ -62,6 +62,10 @@ export class FormularioUsuariosComponent implements OnInit {
 
   }
 
+  /*
+  ** CONSTRUCTOR DE TODOS LOS FORMULARIOS **
+  */
+
   constructor(private formBuilder: FormBuilder) {
 
     this.formularioBusqueda = this.formBuilder.group({
@@ -77,7 +81,7 @@ export class FormularioUsuariosComponent implements OnInit {
       peso: ['', [Validators.min(40), Validators.max(120)]],
       altura: ['', [Validators.min(0.80), Validators.max(3)]],
       contrasena: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(12)]],
-      confirmarContrasena: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(12)]]
+      confirmarContrasena: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(12)]]
     }, { validators: CustomValidators.passwordMatch("contrasena", "confirmarContrasena") });
 
     this.formularioCrearUsuario = this.formBuilder.group({
@@ -88,7 +92,7 @@ export class FormularioUsuariosComponent implements OnInit {
       peso: ['', [Validators.min(40), Validators.max(120)]],
       altura: ['', [Validators.min(0.80), Validators.max(3)]],
       contrasena: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(12)]],
-      confirmarContrasena: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(12)]]
+      confirmarContrasena: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(12)]]
     }, { validators: CustomValidators.passwordMatch("contrasena", "confirmarContrasena") });
 
   }
@@ -298,6 +302,7 @@ export class FormularioUsuariosComponent implements OnInit {
       
       if(respuesta.ok) {
         return alert("Usuarios eliminados correctamente");
+        location.reload();
       }
       
     } else {
